@@ -21,7 +21,7 @@
 	<!--Taken from codepen.io & edited to own style-->
 	<nav class="mb-2 navbar navbar-expand-lg">
 		<!-- Navbar brand -->
-		<a class="navbar-brand font-bold" href="#">Posterpocalypse</a>
+		<a class="navbar-brand font-bold" href="{% url 'index' %}">Posterpocalypse</a>
 		<!-- Collapse button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 		<!-- Collapsible content -->
@@ -29,13 +29,13 @@
 			<!-- Links -->
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link font-bold" href="#">Home<span class="sr-only">(current)</span></a>
+					<a class="nav-link font-bold" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link font-bold" href="#">Shop</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="#">About</a>
+					<a class="nav-link font-bold" href="{% url 'about' %}">About</a>
 				</li>
 			</ul>
 			<!-- Links -->

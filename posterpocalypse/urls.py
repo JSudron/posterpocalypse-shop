@@ -19,9 +19,11 @@ from accounts import urls as urls_accounts
 from home import urls as urls_home
 from django.views import static
 from .settings import MEDIA_ROOT 
+from home.views import about
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include(urls_accounts)),
+    url(r'^about/', about, name="about"),
     url(r'^$', include(urls_home)),
 ]

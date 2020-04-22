@@ -7,6 +7,10 @@ html,body {
     background-color: white;
 }
 
+.heading {
+    text-align: center;
+}
+
 /*-----------------------NAVBAR */
 
 nav {
@@ -70,9 +74,39 @@ nav {
   height: 50vh;
 }
 
-/*-----------------------FORMS */
+/*-----------------------FOOTER */
 
 footer {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+/*-----------------------PRODUCTS */
+
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+}
+
+caption p {
+    word-wrap: break-word;
+}
+
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.panel-default {
+    border-color: transparent;
+    padding: 0 10px;
+}
+
+.panel-body {
+    height: 100%;
 }

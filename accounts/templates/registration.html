@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block page_title %}Login Page{% endblock %}
+{% block page_heading %}User Login{% endblock %}
+{% block content %}
+    <div class="global-container">
+        <div class="card login-form">
+            <div class="card-body">
+                <h3 class="card-title text-center">Create Account</h3>
+                <div class="card-text">
+                    <form class="account-form" method="POST">
+                    {% csrf_token %}
+                    {{ registration_form | as_bootstrap }}
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                        <div class="text-center mt-4">
+                        <p><small>Already registered? <a class="text-warning" href="{% url 'login' %}">Sign in</a></small></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

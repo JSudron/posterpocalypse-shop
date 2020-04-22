@@ -59,6 +59,17 @@ nav {
 	margin-top:20px;
 }
 
+/*-----------------------HOME */
+
+.jumbotron {
+  color: white;
+  background-image: url("https://cdn.collider.com/wp-content/uploads/2018/10/back-to-the-future-mondo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
 /*-----------------------FORMS */
 
 footer {

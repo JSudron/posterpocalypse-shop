@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from home import urls as urls_home
+from products import urls as urls_products
 from home.views import about
 from django.views import static
 from .settings import MEDIA_ROOT 
@@ -27,4 +28,5 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^about/', about, name="about"),
     url(r'^$', include(urls_home)),
+    url(r'^products/', include(urls_products)),
 ]

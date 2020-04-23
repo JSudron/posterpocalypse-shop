@@ -74,6 +74,12 @@ nav {
   height: 50vh;
 }
 
+/*-----------------------ABOUT */
+
+.about-container {
+    padding: 50px 25px;
+}
+
 /*-----------------------FOOTER */
 
 footer {

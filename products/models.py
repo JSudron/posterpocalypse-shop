@@ -1,20 +1,29 @@
 from django.db import models
 
 
-category_choices = (
-    ('Movie_Posters', 'Movie_Posters'),
-    ('Music_TV_Posters', 'Music_TV_Posters'),
-    ('Art_Prints', 'Art_Prints'),
-)
-
-
 class Product(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
-    category = models.CharField(max_length=250, choices=category_choices)
     description = models.TextField()
     artist = models.CharField(max_length=250, default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='images', blank=True, null=True)
+    image = models.ImageField(upload_to="images", default='')
+    quantity = models.IntegerField(default='')
+    category = models.ForeignKey(
+        "products.ProductCategory",
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class ProductCategory(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=250)
+    image = models.ImageField(upload_to="images")
 
     def __str__(self):
         return self.name

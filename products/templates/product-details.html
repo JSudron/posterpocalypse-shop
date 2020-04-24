@@ -10,21 +10,13 @@
         </div>
         <div class="row">
             <div class="column col-12 col-xl-6">
-            <img class="product-image" src="{{ MEDIA_URL}}{{ product.image }}" alt="product_image">
+            <img class="product-image" src="{{ MEDIA_URL }}{{ product.image }}" alt="product_image">
             </div>
             <div class="column col-12 col-xl-6">
                 <p>{{ product.description }}</p>
                 <p>Artwork by {{ product.artist }}</p>
                 <p>£ {{ product.price }}</p>
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="1" class="form-control" placeholder="Quantity" >
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
+                <button type="button" class="btn btn-danger">Add To Cart</button>
             </div>
         </div>
     </div>

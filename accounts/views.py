@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from accounts.forms import UserLoginForm, UserRegistrationForm
+from accounts.forms import UserLoginForm, UserRegistrationForm, CustomerForm
+from accounts.models import Customer
 import sweetify
 
 
@@ -102,3 +103,31 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
+
+def user_profile(request):
+
+    """
+    Renders profile page for user with a form to update
+    their information. When posted creates a new customer.
+    """
+
+    customer = Customer.objects.filter(user=request.user).first()
+    if request.method == "POST":
+        form = CustomerForm(request.POST, instance=customer)
+        if form.is_valid():
+            customer = form.save(commit=False)
+            customer.user = request.user
+            customer.save()
+            sweetify.success(request, "You have updated your account details!")
+    else:
+        form = CustomerForm(instance=customer)
+    has_order = False
+    if customer:
+        has_order = Order.objects.filter(customer=customer).exists()
+
+    return render(
+        request,
+        "profile.html",
+        {"user": request.user, "form": form, "has_order": has_order},
+    )

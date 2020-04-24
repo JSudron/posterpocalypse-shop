@@ -15,9 +15,8 @@ def all_products(request):
     context = {
         'products': products
     }
-
+    
     page = request.GET.get("page", 1)
-    products = products.order_by("name")
     paginator = Paginator(products, 6)
     try:
         products = paginator.page(page)
@@ -47,7 +46,6 @@ def categories(request):
     }
 
     page = request.GET.get("page", 1)
-    products = products.order_by("name")
     paginator = Paginator(products, 6)
     try:
         products = paginator.page(page)
@@ -55,7 +53,14 @@ def categories(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "products.html", context)
+    return render(
+        request, 
+        "products.html", 
+        context,
+        {
+            "products": products,
+        },
+    )
 
 
 """ 

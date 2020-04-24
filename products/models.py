@@ -2,9 +2,9 @@ from django.db import models
 
 
 category_choices = (
-    ('Movie Posters', 'Movie Posters'),
-    ('Music TV Posters', 'Music TV Posters'),
-    ('Art Prints', 'Art Prints'),
+    ('Movie_Posters', 'Movie_Posters'),
+    ('Music_TV_Posters', 'Music_TV_Posters'),
+    ('Art_Prints', 'Art_Prints'),
 )
 
 

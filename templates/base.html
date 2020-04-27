@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
-
+    
 </head>
 
 <body>
@@ -40,10 +40,15 @@
 			<!-- Links -->
 			<!-- Search form -->
 			<ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link" href="{% url 'view_cart' %}">
+                        <i class="fa fa-shopping-cart cart-icon"></i>
+                        {% if product_count > 0 %}
+                        <span class="badge badge-warning" id="product_count">{{ product_count }}</span>
+                        {% endif %}
+                        </a>
+                </li>
 				{% if user.is_authenticated %}
-				<li class="nav-item active">
-					<a class="nav-link font-bold" href="#">Cart<span class="sr-only">(current)</span></a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link font-bold" href="#">Account</a>
 				</li>
@@ -113,6 +118,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/stripe.js' %}"></script>
 	{% block head_js %}
 	{% endblock head_js %}
 

@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <heading class="col-11 col-md-8 col-lg-6 text-center">
             <h1 class="cart-heading">Your cart is empty!</h1>
-            <a href="{% url 'products' %}" class="btn btn-success btn-cta my-5">Back to store</a>
+            <a href="{% url 'all_products' %}" class="btn btn-success btn-cta my-5">Back to store</a>
         </heading>
     </div>
     {% endif %}
@@ -20,7 +20,7 @@
             <div class="caption">
                 <h3 class="product-header">{{ item.product.name }}</h3>
                 <p class="product-description">{{ item.product.description }}</p>
-                <p>Price: <i class="fas fa-euro-sign"></i>{{ item.product.price }}</p>
+                <p>Price: £{{ item.product.price }}</p>
                 <p>
                     <div class="flex-container position-relative">
                         <form class="form-inline justify-content-center " method="post"

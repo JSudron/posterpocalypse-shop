@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, reverse
 from django.contrib import messages
 from products.models import Product
+from cart.models import Cart, CartItem
 import sweetify
 
 
@@ -26,7 +27,55 @@ def add_to_cart(request, id):
     if quantity > product.quantity:
         sweetify.error(request, f"Only {product.quantity} availible")
 
-        return redirect(reverse("index"))
+        return redirect(reverse("all_products"))
+
+    cart = request.session.get("cart", {})
+
+    if not cart.get(id):
+        cart[id] = cart.get(id, quantity)
+    else:
+        cart[id] += quantity
+
+    request.session["cart"] = cart
+    total = round(float(product.price) * quantity, 2)
+    if request.session.get("total"):
+        request.session["total"] += total
+
+    else:
+        request.session["total"] = total
+    if request.user.is_authenticated():
+        user_cart, created = Cart.objects.get_or_create(user=request.user)
+        item = CartItem.objects.filter(cart=user_cart, product_id=id).first()
+        if item:
+            item.quntity = cart[id]
+            item.save()
+        else:
+            CartItem.objects.create(
+                cart=user_cart, product_id=id, quantity=cart[id]
+            )
+
+    return redirect(reverse("all_products"))
+
+
+def adjust_cart(request, id):
+
+    """
+    Adjust the quantity of the product or delete selected item from cart.
+    """
+
+    quantity = request.POST.get("quantity")
+    if not quantity:
+        sweetify.error(request, "Choose quantity")
+        return redirect(reverse("view_cart"))
+    quantity = int(quantity)
+    if quantity < 1:
+        sweetify.error(request, "Quantity must be higher then 0")
+        return redirect(reverse("view_cart"))
+    product = Product.objects.get(id=id)
+    if quantity > product.quantity:
+        sweetify.error(request, f"Only {product.quantity} availible")
+
+        return redirect(reverse("view_cart"))
     cart = request.session.get("cart", {})
 
     previous_quantity = cart[id]

@@ -4,20 +4,26 @@
 {% block page_title %}Product Details{% endblock %}
 {% block page_heading %}Product Details{% endblock %}
 {% block content %}
-    <div class="container text-center">
-        <div>
-            <h2 class="section-title">{{product.name}}</h2>
-        </div>
-        <div class="row">
-            <div class="column col-12 col-xl-6">
-            <img class="product-image" src="{{ MEDIA_URL }}{{ product.image }}" alt="product_image">
+<div class="container text-center">
+	<div>
+		<h2 class="section-title">{{product.name}}</h2>
+	</div>
+	<div class="row">
+		<div class="column col-12 col-xl-6">
+			<img class="product-image" src="{{ MEDIA_URL }}{{ product.image }}" alt="product_image">
             </div>
-            <div class="column col-12 col-xl-6">
-                <p>{{ product.description }}</p>
-                <p>Artwork by {{ product.artist }}</p>
-                <p>£ {{ product.price }}</p>
-                <button type="button" class="btn btn-danger">Add To Cart</button>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+			<div class="column col-12 col-xl-6">
+				<p>{{ product.description }}</p>
+				<p>Artwork by {{ product.artist }}</p>
+				<p>£ {{ product.price }}</p>
+				<form method="post" action="{% url 'add_to_cart' product.id %}" data-add-basket-form>
+					{% csrf_token %}
+					<div class="col-12">
+						<input name="quantity" type="number" min="1" max="{{ product.quantity }}" class="quantity-input" value="{{ request.session.cart }}" placeholder="{{ product.quantity }}" aria-label="quantity">
+					</div>
+				<button class="btn btn-success add-btn" type="submit">Add to cart</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

@@ -3,7 +3,7 @@ from .views import all_products, product_details
 
 
 urlpatterns = [
-    url(r"^$", all_products, name="products"),
+    url(r"^$", all_products, name="all_products"),
     url(
         r"^product-details/(?P<id>\d+)",
         product_details,

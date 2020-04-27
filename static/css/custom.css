@@ -7,15 +7,27 @@ html,body {
     background-color: white;
 }
 
-.heading {
+.heading, p {
     text-align: center;
 }
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 
 /*-----------------------NAVBAR */
 
 nav {
     margin-bottom: 0px !important;
 }
+
+.fa-bars {
+    font-size: 1.5rem;
+}
+
 
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */
@@ -66,7 +78,6 @@ nav {
 /*-----------------------HOME */
 
 .jumbotron {
-  color: white;
   background-image: url("https://cdn.collider.com/wp-content/uploads/2018/10/back-to-the-future-mondo.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -85,6 +96,10 @@ nav {
 footer {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+ul#categories-menu li {
+  display: inline;
 }
 
 /*-----------------------PRODUCTS */
@@ -122,4 +137,10 @@ caption p {
     object-fit: contain;
     height: 100%;
     width: 100%;
+}
+
+.category-link {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.2rem;
 }

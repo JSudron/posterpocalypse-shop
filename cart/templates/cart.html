@@ -13,13 +13,13 @@
         </heading>
     </div>
     {% endif %}
-    <form class="cart-form" method="post">
 	<table id="cart" class="table table-hover table-condensed">
 		<thead>
 			<tr>
 				<th style="width:50%">Product</th>
 				<th style="width:10%">Price</th>
 				<th style="width:8%">Quantity</th>
+                <th style="width:8%"></th>
                 <th style="width:22%" class="text-center">Subtotal</th>
 				<th style="width:10%"></th>
 			</tr>
@@ -38,13 +38,20 @@
 				</td>
 				<td data-th="Price">£{{ item.product.price }}</td>
                 <td data-th="Quantity">
+                    <form method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
 					<input type="number" class="form-control text-center" value="{{ item.quantity }}">
+                    <td>
+                    <button class="btn btn-info btn-sm" method="post" action="{% url 'adjust_cart' item.id %}" type="submit"><i class="fa fa-refresh"></i></button>
+                    </td>
+                    </form>
 				</td>
                 <td data-th="Subtotal" class="text-center">£{{ item.product.price }}</td>
                 <td class="actions" data-th="">
-					<button class="btn btn-info btn-sm" method="post" action="{% url 'adjust_cart' item.id %}" type="submit"><i class="fa fa-refresh"></i></button>
+                    <form action="{% url 'cart_item_delete' item.id %}" method="post">
+                    {% csrf_token %}
 					<button class="btn btn-danger btn-sm" action="{% url 'cart_item_delete' item.id %}" method="post" type="submit"><i class="fa fa-trash-o"></i></button>
+                    </form>
                 </td>
 			</tr>
             {% endfor %}
@@ -53,11 +60,10 @@
             {% if cart_items %}
 			<td><a href="{% url 'index' %}" class="btn btn-warning">Continue Shopping</a></td>
 			<td colspan="2" class="hidden-xs"></td>
-			<td class="hidden-xs text-center"><strong>£{{ total | floatformat:2}}</strong></td>
+			<td class="hidden-xs text-center">Total:<strong>£{{ total | floatformat:2}}</strong></td>
 			<td><a href="/" class="btn btn-success btn-block">Checkout</a></td>
             {% endif %}
 		</tfoot>
 	</table>
-    </form>
 </div>
 {% endblock %}

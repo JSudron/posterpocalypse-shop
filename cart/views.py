@@ -2,7 +2,6 @@ from django.shortcuts import redirect, render, reverse
 from django.contrib import messages
 from products.models import Product
 from cart.models import Cart, CartItem
-import sweetify
 
 
 def view_cart(request):
@@ -25,7 +24,7 @@ def add_to_cart(request, id):
 
     product = Product.objects.get(id=id)
     if quantity > product.quantity:
-        sweetify.error(request, f"Only {product.quantity} availible")
+        messages.error(request, f"Only {product.quantity} availible")
 
         return redirect(reverse("all_products"))
 
@@ -65,15 +64,15 @@ def adjust_cart(request, id):
 
     quantity = request.POST.get("quantity")
     if not quantity:
-        sweetify.error(request, "Choose quantity")
+        messages.error(request, "Choose quantity")
         return redirect(reverse("view_cart"))
     quantity = int(quantity)
     if quantity < 1:
-        sweetify.error(request, "Quantity must be higher then 0")
+        messages.error(request, "Quantity must be higher then 0")
         return redirect(reverse("view_cart"))
     product = Product.objects.get(id=id)
     if quantity > product.quantity:
-        sweetify.error(request, f"Only {product.quantity} availible")
+        messages.error(request, f"Only {product.quantity} availible")
 
         return redirect(reverse("view_cart"))
     cart = request.session.get("cart", {})

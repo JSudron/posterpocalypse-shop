@@ -4,12 +4,13 @@ from accounts.models import Customer
 from cart.utils import clear_cart
 from checkout.utils import create_order_history
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from products.models import Product
 from .forms import MakePaymentForm
 from .models import Order, OrderItem
-import stripe, sweetify
+import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
@@ -45,18 +46,18 @@ def checkout(request):
                     card=payment_form.cleaned_data["stripe_id"],
                 )
             except stripe.error.CardError:
-                sweetify.error(request, "Your card was declined!")
+                messages.error(request, "Your card was declined!")
 
             if customer.paid:
                 try:
                     send_checkout_mail(request)
                 except SMTPAuthenticationError:
-                    sweetify.error(
+                    messages.error(
                         request, "Your order confirmation email send failed"
                     )
                 create_order_history(request.user, request.session)
                 clear_cart(request.user)
-                sweetify.error(request, "You have successfully paid")
+                messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
                 request.session["total"] = 0
                 return redirect(reverse("products"))

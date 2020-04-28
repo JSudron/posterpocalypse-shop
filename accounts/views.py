@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm, CustomerForm
 from accounts.models import Customer
-import sweetify
 
 
 def register(request):
@@ -13,7 +12,7 @@ def register(request):
     Render registration page
     """
     if request.user.is_authenticated:
-        sweetify.info(request, "You're already logged in",
+        messages.info(request, "You're already logged in",
                          button='Ok', timer=3000)
         return redirect(reverse('index'))
 
@@ -28,11 +27,11 @@ def register(request):
 
             if user:
                 auth.login(user=user, request=request)
-                sweetify.success(request,
+                messages.success(request,
                                  "You have successfully registered your account")
                 return redirect(reverse('index'))
             else:
-                sweetify.info(request,
+                messages.info(request,
                               "Sorry but we're unable to register your account at this time!",
                               button='Ok', timer=3000)
     else:
@@ -51,7 +50,7 @@ def login(request):
     Render login page
     """
     if request.user.is_authenticated:
-        sweetify.info(request, "You're already logged in!",
+        messages.info(request, "You're already logged in!",
                          button='OK', timer=3000)
         return redirect(reverse('index'))
 
@@ -63,7 +62,7 @@ def login(request):
 
             if user:
                 auth.login(user=user, request=request)
-                sweetify.success(request,
+                messages.success(request,
                                  "You have successfully logged in!")
 
                 if request.GET.get('next', False):
@@ -84,7 +83,7 @@ def logout(request):
     Logout user
     """
     auth.logout(request)
-    sweetify.success(request, "You have successfully been logged out!")
+    messages.success(request, "You have successfully been logged out!")
 
     return redirect(reverse('index'))
 

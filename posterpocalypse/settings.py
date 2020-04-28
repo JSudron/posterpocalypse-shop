@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'sweetify',
     'accounts',
     'home',
     'products',
@@ -82,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'posterpocalypse.wsgi.application'
 
-SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

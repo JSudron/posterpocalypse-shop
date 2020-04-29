@@ -36,8 +36,6 @@ def checkout(request):
                 product = get_object_or_404(Product, pk=id)
                 total += quantity * product.price
 
-            if total < 60:
-                total = float(total) + 4.99
             try:
                 customer = stripe.Charge.create(
                     amount=int(total * 100),
@@ -49,18 +47,12 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                try:
-                    send_checkout_mail(request)
-                except SMTPAuthenticationError:
-                    messages.error(
-                        request, "Your order confirmation email send failed"
-                    )
                 create_order_history(request.user, request.session)
                 clear_cart(request.user)
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
                 request.session["total"] = 0
-                return redirect(reverse("products"))
+                return redirect(reverse("index"))
             else:
                 messages.error(request, "Unable to take payment")
         else:

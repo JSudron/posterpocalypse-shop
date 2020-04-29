@@ -205,4 +205,8 @@ caption p {
 	table#cart tfoot td .btn{display:block;}	
 }
 
+/*-----------------------SHIPPING */
 
+.shipping-form-wrapper {
+    align-items: center;
+}

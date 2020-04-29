@@ -4,7 +4,7 @@
 {% block page_title %}Checkout{% endblock %}
 {% block page_heading %}Checkout{% endblock %}
 {% block content %}
-    <main>
+    <div class="container">
         <div class="checkout-wrapper">
             <div class="container">
                 <div class="form-group checkout-pay-form">
@@ -28,15 +28,17 @@
                 </div>
                 <div class="total-price">
                     <p class="total-checkout">Total: </p>
-                    <p>£</span>
-                    {% if request.session.total >= 60 %}
-                    {{ request.session.total_after_discount | floatformat:2}} - free shipping
-                    {% else %}
-                    {{ request.session.total_after_discount | floatformat:2}} + 4.99 shipping
-                        {% endif %}
+                    <p>£{{ total | floatformat:2 }} + Free Shipping</span>
                     </p>
                 </div>
             </div>
         </div>
-    </main>
-{% end block %}
+    </div>
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+    </script>
+{% endblock %}

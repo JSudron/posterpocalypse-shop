@@ -61,7 +61,7 @@
 			<td><a href="{% url 'index' %}" class="btn btn-warning">Continue Shopping</a></td>
 			<td colspan="2" class="hidden-xs"></td>
 			<td class="hidden-xs text-center">Total:<strong>£{{ total | floatformat:2}}</strong></td>
-			<td><a href="/" class="btn btn-success btn-block">Checkout</a></td>
+			<td><a href="{% url 'shipping' %}" class="btn btn-success btn-block">Checkout</a></td>
             {% endif %}
 		</tfoot>
 	</table>

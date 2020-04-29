@@ -72,7 +72,7 @@ def adjust_cart(request, id):
         return redirect(reverse("view_cart"))
     product = Product.objects.get(id=id)
     if quantity > product.quantity:
-        messages.error(request, f"Only {product.quantity} availible")
+        messages.error(request, f"Only {product.quantity} available")
 
         return redirect(reverse("view_cart"))
     cart = request.session.get("cart", {})

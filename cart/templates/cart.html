@@ -40,7 +40,7 @@
                 <td data-th="Quantity">
                     <form method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
-					<input type="number" class="form-control text-center" value="{{ item.quantity }}">
+					<input type="number" name="quantity" class="form-control text-center" value="{{ item.quantity }}">
                     <td>
                     <button class="btn btn-info btn-sm" method="post" action="{% url 'adjust_cart' item.id %}" type="submit"><i class="fa fa-refresh"></i></button>
                     </td>

@@ -52,7 +52,7 @@ def checkout(request):
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
                 request.session["total"] = 0
-                return redirect(reverse("index"))
+                return redirect("order_confirmation")
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -131,7 +131,7 @@ def order_history(request):
 
 
 def order_confirmation(request):
-    return render(request, "order-confirmation.html")
+    return render(request, "order_confirmation.html")
 
 
 

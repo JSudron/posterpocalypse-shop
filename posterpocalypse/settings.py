@@ -142,4 +142,10 @@ MEDIAFILES_LOCATION = 'media'
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

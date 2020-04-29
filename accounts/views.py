@@ -118,7 +118,7 @@ def user_profile(request):
             customer = form.save(commit=False)
             customer.user = request.user
             customer.save()
-            sweetify.success(request, "You have updated your account details!")
+            messages.success(request, "You have updated your profile")
     else:
         form = CustomerForm(instance=customer)
     has_order = False

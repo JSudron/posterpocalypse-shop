@@ -4,11 +4,28 @@
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 {% block page_heading %}{{ user }}'s Profile{% endblock %}
 {% block content %}
-<div class="container">
-  <div class=".col-xs-4 .col-md-offset-2">
-    <div class="panel panel-default panel-info Profile">
-      <div class="panel-heading"> {{ user }}'s Profile </div>
-      <div class="panel-body">
-        <p></p>
-  </div> 
-</div> 
+    <div class="container-fluid">
+        <div class="row justify-content-center contact-row">
+            <div class="col-md-10 col-sm-12 col-xs-12 profile-form-wrapper">
+                <h4 class="profile-welcome">{{user.username}}'s Profile</h4>
+                {% if has_order %}
+                <a class="order-history-link" href="{% url 'order_history' %}">My Orders</a>
+                {% else %}
+                <a class="order-history-link" href="{% url 'index' %}">You Have No Order History. Go To Store </a>
+                {% endif %}
+                <form method="POST" class="post-form full_input_form">{% csrf_token %}
+                    {% for field in form %}
+                    <div class="forms-group">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <label><h4 class= "input-details">{{field.label_tag}} <span class="asteriskField">*</span></h4></label>
+                            {{field}}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="text-center"><button type="submit" class="save btn btn-default btn-success">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

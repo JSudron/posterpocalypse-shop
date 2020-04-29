@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block page_title %}Order Confirmation{% endblock %}
+{% block page_heading %}Order Confirmation{% endblock %}
+{% block content %}
+<div class="content">
+	<table>
+		<tr>
+			<td>
+				<br/>
+				<h3>Thanks {{ user.username }}</h3>
+				<br/>
+				<h4>Your Order</h4>
+				<br/>
+				{% for product in products %}
+				<div class="products">
+					<span> {{ product.quantity }}x {{ product.product.name }} - £{{ product.product.price }}</span>
+				</div>
+				<hr>
+				{% endfor %}
+				<h5><b>Total: {{total | floatformat:2}}</b></h5>
+				<table class="columns" width="100%">
+					<tr>
+						<td>
+							<table align="left" class="column">
+								<tr>
+									<td>
+										<h5 class="">Shipping address</h5>
+										<p class="">
+											{{ customer.full_name }}<br/>
+													{{ customer.street_address1 }}<br/>
+													{{ customer.street_address2 }}<br/>
+													{{ customer.postcode }}
+													{{ customer.town_city }}<br/>
+													{{ customer.county }}</p>
+										</p>
+									</td>
+								</tr>
+							</table>
+							<span class="clear"></span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+{% endblock %}

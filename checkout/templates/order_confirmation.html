@@ -4,46 +4,29 @@
 {% block page_title %}Order Confirmation{% endblock %}
 {% block page_heading %}Order Confirmation{% endblock %}
 {% block content %}
-<div class="content">
-	<table>
-		<tr>
-			<td>
-				<br/>
-				<h3>Thanks for placing an order {{ user.username }}</h3>
-				<br/>
-				<h4>Your Order</h4>
-				<br/>
-				{% for product in products %}
-				<div class="products">
-					<span> {{ product.quantity }}x {{ product.product.name }} - £{{ product.product.price }}</span>
-				</div>
-				<hr>
-				{% endfor %}
-				<h5><b>Total: {{total | floatformat:2}}</b></h5>
-				<table class="columns" width="100%">
-					<tr>
-						<td>
-							<table align="left" class="column">
-								<tr>
-									<td>
-										<h5 class="">Shipping address</h5>
-										<p class="">
-											{{ customer.full_name }}<br/>
-													{{ customer.street_address1 }}<br/>
-													{{ customer.street_address2 }}<br/>
-													{{ customer.postcode }}
-													{{ customer.town_city }}<br/>
-													{{ customer.county }}</p>
-										</p>
-									</td>
-								</tr>
-							</table>
-							<span class="clear"></span>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-</div>
+    <section class="metal-bg flex-background top-padding">
+        <div class="container cart-section">
+
+            <h2 class="brand-text-header-black text-center">Order Successful!</h2>
+
+            <h3 style="margin-top: 60px;">Your order number is: <span style="color: red;">{{ order_history_number }}</span>
+            </h3>
+            <div class="forms-group">
+                <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">
+                    <h4 class= "input-details">{{field.label_tag}} </h4>
+                    {{field}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <p class="bold-text top-buffer" style="font-size: 22px;">
+                        Thank you for your order. This is now being processed by our worker bees and will be with you
+                        shortly.
+                    </p>
+                </div>
+                <a href="{% url 'index' %}"
+                    class="btn btn-lg btn-info top-buffer"><i class="fa fa-home" aria-hidden="true"></i> Return to the home
+                    page</a>
+            </div>
+    </section>
 {% endblock %}

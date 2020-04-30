@@ -84,24 +84,13 @@ nav {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 85vh;
 }
 
 /*-----------------------ABOUT */
 
 .about-container {
     padding: 50px 25px;
-}
-
-/*-----------------------FOOTER */
-
-footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-ul#categories-menu li {
-  display: inline;
 }
 
 /*-----------------------PRODUCTS */
@@ -212,4 +201,16 @@ caption p {
     align-items: center;
 }
 
+/*-----------------------FOOTER */
 
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+ul#categories-menu li {
+  display: inline;
+}

@@ -51,6 +51,7 @@ def checkout(request):
                 clear_cart(request.user)
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
+                request.session['order_number'] = order.id
                 request.session["total"] = 0
                 return redirect("order_confirmation")
             else:
@@ -68,8 +69,6 @@ def checkout(request):
         {
             "payment_form": payment_form,
             "publishable": settings.STRIPE_PUBLISHABLE,
-            "disable_header": True,
-            "disable_footer": True,
         },
     )
 
@@ -129,19 +128,13 @@ def order_history(request):
 
 
 def order_confirmation(request):
-    products = []
-    for product_id, quantity in request.session["cart"].items():
-        product = Product.objects.get(pk=product_id)
-        products.append({"product": product, "quantity": quantity})
-
-    context = {
-        "user": request.user,
-        "total": request.session["total"],
-        "products": products,
-        "customer": Customer.objects.get(user=request.user)}
-        
-    return render(request, "order_confirmation.html")
-
-
-
-
+    order_number = request.session.get('order_history_number')
+    form = request.session.get('CustomerForm')
+    return render(
+        request, 
+        "order_confirmation.html", 
+        {
+            "order_number": order_history_number,
+            "form": form,
+        }
+    )

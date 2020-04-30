@@ -29,6 +29,6 @@ class OrderItem(TimestampedModel):
     this model holds the user order history item
     """
 
-    order_history = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order_history = models.ForeignKey(Order, on_delete=models.CASCADE, null=False)
     product = models.ForeignKey("products.Product", on_delete=models.CASCADE)
     quantity = models.IntegerField()

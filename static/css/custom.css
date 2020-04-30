@@ -168,6 +168,7 @@ caption p {
     height: 100vh;
     width: 60vw;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .artist-cart {
@@ -210,3 +211,5 @@ caption p {
 .shipping-form-wrapper {
     align-items: center;
 }
+
+

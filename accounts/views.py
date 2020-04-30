@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm, CustomerForm
 from accounts.models import Customer
+from checkout.models import Order
 
 
 def register(request):
@@ -128,5 +129,5 @@ def user_profile(request):
     return render(
         request,
         "profile.html",
-        {"user": request.user, "form": form, "has_order": has_order},
+        {"user": request.user, "form": form, "has_order": has_order}
     )

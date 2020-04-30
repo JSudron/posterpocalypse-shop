@@ -102,8 +102,6 @@ def shipping(request):
         {
             "customer": customer,
             "form": form,
-            "disable_header": True,
-            "disable_footer": True,
         },
     )
 
@@ -131,6 +129,17 @@ def order_history(request):
 
 
 def order_confirmation(request):
+    products = []
+    for product_id, quantity in request.session["cart"].items():
+        product = Product.objects.get(pk=product_id)
+        products.append({"product": product, "quantity": quantity})
+
+    context = {
+        "user": request.user,
+        "total": request.session["total"],
+        "products": products,
+        "customer": Customer.objects.get(user=request.user)}
+        
     return render(request, "order_confirmation.html")
 
 

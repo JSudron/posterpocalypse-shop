@@ -20,11 +20,13 @@
 <body>
 	<!--NAVBAR-->
 	<!--Taken from codepen.io & edited to own style-->
+    <div class="alert alert-danger" role="alert">Free shipping on all orders during lockdown!</div>
+    <a class="navbar-brand" href="{% url 'index' %}">Posterpocalypse</a>
 	<nav class="mb-2 navbar navbar-expand-lg">
 		<!-- Navbar brand -->
-		<a class="navbar-brand font-bold" href="{% url 'index' %}">Posterpocalypse</a>
 		<!-- Collapse button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <p>MENU</p>
             <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
         </button>
 		<!-- Collapsible content -->
@@ -42,8 +44,7 @@
 			<!-- Search form -->
 			<ul class="navbar-nav ml-auto">
                 <li>
-                    <a class="nav-link" href="{% url 'view_cart' %}">
-                        <i class="fa fa-shopping-cart cart-icon"></i>
+                    <a class="nav-link" href="{% url 'view_cart' %}">Cart
                         {% if product_count > 0 %}
                         <span class="badge badge-warning" id="product_count">{{ product_count }}</span>
                         {% endif %}
@@ -66,7 +67,6 @@
 				{% endif %}
 			</ul>
 			<form class="form-inline md-form mb-0">
-				<i class="fa fa-search" aria-hidden="true"></i>
 				<input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="Search" type="search" aria-label="Search" required/>
             </form>
 		</div>

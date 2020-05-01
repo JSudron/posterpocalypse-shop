@@ -23,8 +23,19 @@ dl, ol, ul {
 
 /*-----------------------NAVBAR */
 
+.alert-danger {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    border: none;
+    text-align: center;
+}
+
 nav {
     margin-bottom: 0px !important;
+}
+
+.navbar-brand {
+    text-align: center !important;
 }
 
 .fa-bars {

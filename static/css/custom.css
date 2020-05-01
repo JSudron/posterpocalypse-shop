@@ -10,6 +10,12 @@ html,body {
     font-family: 'Manrope';
 }
 
+container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .heading, p {
     text-align: center;
 }
@@ -35,7 +41,7 @@ nav {
 }
 
 .navbar-brand {
-    text-align: center !important;
+    text-align: center;
 }
 
 .fa-bars {
@@ -45,13 +51,6 @@ nav {
 
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */
-
-.global-container {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 
 .account-form {
 	padding-top: 10px;

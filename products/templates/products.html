@@ -7,11 +7,11 @@
     <div class="container-fluid">
         <ul id="categories-menu">
             {% for category in categories %}
-            <li class="active">
+            <li class="active effect-1">
                 <a class="category-link" href="{% url 'index' %}?category_id={{category.id}}">{{category.name | title}}<span class="sr-only"></span></a>
             </li>
             {% endfor %}
-            <li class="active">
+            <li class="active effect-1">
                 <a class="category-link" href="{% url 'index' %}">View All<span class="sr-only"></span></a>
             </li>
         </ul> 
@@ -31,7 +31,7 @@
         </div>
         <div class="pagination-wrapper">
             {% if products.has_other_pages %}
-            <ul class="pagination">
+            <ul class="pagination effect-1 justify-content-center">
                 {% if products.has_previous %}
                 <li><a class="page-link" href="?page={{ products.previous_page_number }}">&laquo;</a></li>
                 {% else %}

@@ -32,19 +32,19 @@
 		<!-- Collapsible content -->
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<!-- Links -->
-			<ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav mr-auto effect-1">
                 <li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'all_products' %}">Shop</a>
+					<a class="nav-link" href="{% url 'all_products' %}">Shop</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'about' %}">About</a>
+					<a class="nav-link" href="{% url 'about' %}">About</a>
 				</li>
 			</ul>
 			<!-- Links -->
 			<!-- Search form -->
-			<ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav ml-auto effect-1">
                 <li>
-                    <a class="nav-link" href="{% url 'view_cart' %}">Cart
+                    <a class="nav-link effect-1" href="{% url 'view_cart' %}">Cart
                         {% if product_count > 0 %}
                         <span class="badge badge-warning" id="product_count">{{ product_count }}</span>
                         {% endif %}
@@ -52,17 +52,17 @@
                 </li>
 				{% if user.is_authenticated %}
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'profile' %}">Account</a>
+					<a class="nav-link" href="{% url 'profile' %}">Account</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'logout' %}">Sign Out</a>
+					<a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
 				</li>
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'register' %}">Sign Up</a>
+					<a class="nav-link" href="{% url 'register' %}">Sign Up</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link font-bold" href="{% url 'login' %}">Sign In</a>
+					<a class="nav-link" href="{% url 'login' %}">Sign In</a>
 				</li>
 				{% endif %}
 			</ul>

@@ -47,11 +47,11 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                create_order_history(request.user, request.session)
+                order = create_order_history(request.user, request.session)
                 clear_cart(request.user)
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
-                request.session['order_number'] = order.id
+                request.session['order_history'] = order.id
                 request.session["total"] = 0
                 return redirect("order_confirmation")
             else:
@@ -128,13 +128,17 @@ def order_history(request):
 
 
 def order_confirmation(request):
-    order_number = request.session.get('order_history_number')
+    order_history = request.session.get('order_history')
+    product_id = request.session.get("product_id")
+    quantity = request.session.get("quantity")
     form = request.session.get('CustomerForm')
     return render(
         request, 
         "order_confirmation.html", 
         {
-            "order_number": order_history_number,
+            "order_history": order_history,
+            "product_id": product_id,
+            "quantity": quantity,
             "form": form,
         }
     )

@@ -4,29 +4,23 @@
 {% block page_title %}Order Confirmation{% endblock %}
 {% block page_heading %}Order Confirmation{% endblock %}
 {% block content %}
-    <section class="metal-bg flex-background top-padding">
-        <div class="container cart-section">
-
-            <h2 class="brand-text-header-black text-center">Order Successful!</h2>
-
-            <h3 style="margin-top: 60px;">Your order number is: <span style="color: red;">{{ order_history_number }}</span>
-            </h3>
-            <div class="forms-group">
-                <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">
-                    <h4 class= "input-details">{{field.label_tag}} </h4>
-                    {{field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-9">
-                    <p class="bold-text top-buffer" style="font-size: 22px;">
-                        Thank you for your order. This is now being processed by our worker bees and will be with you
-                        shortly.
-                    </p>
-                </div>
-                <a href="{% url 'index' %}"
-                    class="btn btn-lg btn-info top-buffer"><i class="fa fa-home" aria-hidden="true"></i> Return to the home
-                    page</a>
-            </div>
-    </section>
+    <div class="container-fluid">
+        <h2 class="text-center">Order Successful!</h2>
+        <h3>Your order number is: <span>{{ order_history }}</span></h3>
+        <br></br>
+        <h3>{{ product_id }}</h3>
+        <h3>{{ product_id }}</h3>
+        <h5 class="">Shipping address</h5>
+        <p class="">
+            {{ form.full_name }}<br/>
+            {{ customer.street_address1 }}<br/>
+            {{ customer.street_address2 }}<br/>
+            {{ customer.postcode }}
+            {{ customer.town_city }}<br/>
+            {{ customer.county }}</p>
+        </p>
+        </div>
+        </div>
+        <a href="{% url 'index' %}" class="btn btn-success">Return to the home page</a>
+    </div>
 {% endblock %}

@@ -11,3 +11,4 @@ def create_order_history(user, session):
         OrderItem.objects.create(
             order_history=order, product_id=product_id, quantity=quantity
         )
+    return order

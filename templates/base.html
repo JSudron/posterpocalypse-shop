@@ -21,28 +21,25 @@
 	<!--NAVBAR-->
 	<!--Taken from codepen.io & edited to own style-->
     <div class="alert alert-danger" role="alert">Free shipping on all orders during lockdown!</div>
-    <a class="navbar-brand" href="{% url 'index' %}">Posterpocalypse</a>
-	<nav class="mb-2 navbar navbar-expand-lg">
+    <div class="navbar-header">
+    <a class="navbar-brand navbar-center" href="{% url 'index' %}">Posterpocalypse</a>
+    </div>
+	<nav class="navbar navbar-expand-lg slanted-header">
 		<!-- Navbar brand -->
 		<!-- Collapse button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <p>MENU</p>
-            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+            <span class="navbar-toggler-icon">Menu</span>
         </button>
 		<!-- Collapsible content -->
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<!-- Links -->
-			<ul class="navbar-nav mr-auto effect-1">
+			<ul class="navbar-nav mx-auto effect-1">
                 <li class="nav-item">
 					<a class="nav-link" href="{% url 'all_products' %}">Shop</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'about' %}">About</a>
 				</li>
-			</ul>
-			<!-- Links -->
-			<!-- Search form -->
-			<ul class="navbar-nav ml-auto effect-1">
                 <li>
                     <a class="nav-link effect-1" href="{% url 'view_cart' %}">Cart
                         {% if product_count > 0 %}
@@ -65,13 +62,13 @@
 					<a class="nav-link" href="{% url 'login' %}">Sign In</a>
 				</li>
 				{% endif %}
-			</ul>
-			<form class="form-inline md-form mb-0">
-				<input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="Search" type="search" aria-label="Search" required/>
-            </form>
+                <form class=" mb-3 mx-auto">
+                    <input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="&#xF002; Search" type="search" aria-label="Search" style="font-family:Manrope, FontAwesome" required/>
+                </form>
+            </ul>
 		</div>
 		<!-- Collapsible content -->
-	</nav>
+	</nav>  
 
         {% if messages %}
             <div class="alert alert-danger">

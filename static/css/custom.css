@@ -83,19 +83,21 @@ a:focus {
     text-align: center;
 }
 
-nav {
+.navbar {
     margin-bottom: 0px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.navbar-header {
+    width: 100%;
     text-align: center;
 }
 
-.navbar-brand {
+.search-input {
     text-align: center;
+    border: none;
 }
-
-.fa-bars {
-    font-size: 1.5rem;
-}
-
 
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */
@@ -115,18 +117,18 @@ nav {
 }
 
 .btn {
-	font-size: 14px;
+	font-size:14px;
 }
 
 
 .login-form { 
 	width: 330px;
-	margin:20px;
+	margin: 20px;
 }
 
 .sign-up {
-	text-align:center;
-	padding:20px 0 0;
+	text-align: center;
+	padding: 20px 0 0;
 }
 
 .alert {
@@ -143,6 +145,12 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   height: 85vh;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 6vw)
+  )
 }
 
 /*-----------------------ABOUT */
@@ -229,6 +237,28 @@ caption p {
     text-align: left;
 }
 
+/*-----------------------SHIPPING */
+
+.shipping-form-wrapper {
+    align-items: center;
+}
+
+/*-----------------------FOOTER */
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+ul#categories-menu li {
+  display: inline;
+}
+
+/*-----------------------MEDIA QUERIES */
+
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{
 		width:20%;
@@ -258,24 +288,4 @@ caption p {
 	
 	table#cart tfoot td{display:block; }
 	table#cart tfoot td .btn{display:block;}	
-}
-
-/*-----------------------SHIPPING */
-
-.shipping-form-wrapper {
-    align-items: center;
-}
-
-/*-----------------------FOOTER */
-
-footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-ul#categories-menu li {
-  display: inline;
 }

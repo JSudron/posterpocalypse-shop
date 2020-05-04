@@ -9,21 +9,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Posterpocalypse</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+		type="text/css" />
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
-    
+
 </head>
 
 
 <body>
 	<!--NAVBAR-->
 	<!--Taken from codepen.io & edited to own style-->
-    <div class="alert alert-danger" role="alert">Free shipping on all orders during lockdown!</div>
-    <div class="navbar-header">
-    <a class="navbar-brand navbar-center" href="{% url 'index' %}">Posterpocalypse</a>
-    </div>
+	<div class="alert alert-danger" role="alert">Free shipping on all orders during lockdown!</div>
+	<div class="navbar-header">
+		<a class="navbar-brand navbar-center" href="{% url 'index' %}">Posterpocalypse</a>
+	</div>
 	<nav class="navbar navbar-expand-lg slanted-header">
 		<!-- Navbar brand -->
 		<!-- Collapse button -->
@@ -34,19 +37,19 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<!-- Links -->
 			<ul class="navbar-nav mx-auto effect-1">
-                <li class="nav-item">
+				<li class="nav-item">
 					<a class="nav-link" href="{% url 'all_products' %}">Shop</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'about' %}">About</a>
 				</li>
-                <li>
-                    <a class="nav-link effect-1" href="{% url 'view_cart' %}">Cart
-                        {% if product_count > 0 %}
-                        <span class="badge badge-warning" id="product_count">{{ product_count }}</span>
-                        {% endif %}
-                        </a>
-                </li>
+				<li>
+					<a class="nav-link effect-1" href="{% url 'view_cart' %}">Cart
+						{% if product_count > 0 %}
+						<span class="badge badge-warning" id="product_count">{{ product_count }}</span>
+						{% endif %}
+					</a>
+				</li>
 				{% if user.is_authenticated %}
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'profile' %}">Account</a>
@@ -62,71 +65,93 @@
 					<a class="nav-link" href="{% url 'login' %}">Sign In</a>
 				</li>
 				{% endif %}
-                <form class=" mb-3 mx-auto">
-                    <input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="&#xF002; Search" type="search" aria-label="Search" style="font-family:Manrope, FontAwesome" required/>
+				<form class=" mb-3 mx-auto">
+					<input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="&#xF002; Search" type="search" aria-label="Search" style="font-family:Manrope, FontAwesome" required/>
                 </form>
-            </ul>
+			</ul>
 		</div>
 		<!-- Collapsible content -->
-	</nav>  
+	</nav>
 
-        {% if messages %}
-            <div class="alert alert-danger">
-                <div class="messages">
-                    {% for message in messages %}
-                        {{ message }}
-                    {% endfor %}
-                </div>
-            </div>
-        {% endif %}
+	{% if messages %}
+	<div class="alert alert-danger">
+		<div class="messages">
+			{% for message in messages %}
+			{{ message }}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
 
-    {% block content %} 
-    {% endblock %}
+	{% block content %}
+	{% endblock %}
 
-    <!--FOOTER-->
-	<footer class="container-fluid">
-        <div class="footer-section row" id="footer-info">
-            <div class="col-md-6">
-                <h5 class="uppercase footer-header header">Posterpocalypse</h5>
-                <p class="inline-block footer-text">Copyright Joe Sudron 2020</p>
-            </div>
-            <div class="col-md-6">
-                <h5 class="uppercase footer-header" id="social-media">Stay Connected</h5>
-                <ul class="list-inline social-links icon-border">
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.facebook.com/JoeSudronYeah">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.instagram.com/joesudron83/">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.linkedin.com/in/joe-sudron">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://github.com/JSudron">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                    </li>
-                 </ul>
-            </div>
-        </div>
-    </footer>
+	<!--FOOTER-->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<h6>About</h6>
+					<p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+						upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+						snippets as the code wants to be simple. We will help programmers build up concepts in different
+						programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android,
+						SQL and Algorithm.</p>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Categories</h6>
+					<ul class="footer-links">
+						<li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+						<li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+						<li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+						<li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+						<li><a href="http://scanfcode.com/category/android/">Android</a></li>
+						<li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+					</ul>
+				</div>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+				<div class="col-xs-6 col-md-3">
+					<h6>Quick Links</h6>
+					<ul class="footer-links">
+						<li><a href="http://scanfcode.com/about/">About Us</a></li>
+						<li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+						<li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+						<li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+						<li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+						<a href="#">Scanfcode</a>.
+					</p>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
 	<script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/stripe.js' %}"></script>
+	<script src="{% static 'js/stripe.js' %}"></script>
 	{% block head_js %}
 	{% endblock head_js %}
 

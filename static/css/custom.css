@@ -6,7 +6,7 @@
 /*-----------------------Anchor effect taken from codepen.io & edited to own style */
 
 html,body { 
-	height: 100%; 
+    height: 100%;
     background-color: white;
     font-family: 'Manrope';
 }
@@ -134,17 +134,12 @@ a:focus {
 /*-----------------------HOME */
 
 .jumbotron {
-  background-image: url("https://cdn.collider.com/wp-content/uploads/2018/10/back-to-the-future-mondo.jpg");
+  background-image: url("https://images.pexels.com/photos/479453/pexels-photo-479453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 85vh;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - 6vw)
-  )
+  height: 65vh;
+
 }
 
 /*-----------------------ABOUT */
@@ -192,6 +187,11 @@ caption p {
 
 .item-details {
     padding-top: 0px;
+}
+
+ ul#categories-menu {
+    list-style-type: none;
+    text-align: left;
 }
 
 .category-link {
@@ -242,6 +242,11 @@ caption p {
 
 /*-----------------------FOOTER */
 
+footer {
+    bottom: 0;
+    width: 100%
+}
+
 .site-footer {
     background-color: #26272b;
     padding: 45px 0 20px;
@@ -258,6 +263,7 @@ caption p {
 .site-footer hr.small {
     margin: 20px 0
 }
+
 .site-footer h6 {
     color: #fff;
     font-size: 16px;
@@ -380,11 +386,10 @@ caption p {
     background-color: #000;
 }
 
-/*-----------------------MEDIA QUERIES - CART*/
+/*-----------------------MEDIA QUERIES - CART */
 
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control {
-		width:20%;
 		display: inline !important;
 	}
 
@@ -413,7 +418,7 @@ caption p {
 	table#cart tfoot td .btn{display:block;}	
 }
 
-/*-----------------------MEDIA QUERIES - FOOTER*/
+/*-----------------------MEDIA QUERIES - FOOTER */
 
 @media (max-width:991px) {
     .site-footer [class^=col-] {

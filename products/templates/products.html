@@ -5,29 +5,36 @@
 {% block page_heading %}Products{% endblock %}
 {% block content %}
     <div class="container-fluid">
-        <ul id="categories-menu">
-            {% for category in categories %}
-            <li class="active effect-1">
-                <a class="category-link" href="{% url 'index' %}?category_id={{category.id}}">{{category.name | title}}<span class="sr-only"></span></a>
-            </li>
-            {% endfor %}
-            <li class="active effect-1">
-                <a class="category-link" href="{% url 'index' %}">View All<span class="sr-only"></span></a>
-            </li>
-        </ul> 
         <div class="row row-flex">
-            {% for product in products %}
-            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-                <a href="{% url 'product_details' product.id %}">
-                    <div class="panel-body">
-                        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                        <p>{{ product.name }}</p>
-                        <p>Artwork by {{ product.artist }}</p>
-                        <p>£{{ product.price }}</p>
-                    </div>
-                </a>
+            <div class="col-12 col-lg-3">
+                <h4>Categories:</h2>
+                    <ul id="categories-menu">
+                        {% for category in categories %}
+                        <li class="effect-1">
+                            <a class="category-link"
+                                href="{% url 'all_products' %}?category_id={{category.id}}">{{category.name | title}}<span class="sr-only"></span></a>
+                        </li>
+                        {% endfor %}
+                        <li class="effect-1">
+                            <a class="category-link" href="{% url 'all_products' %}">View
+                                All<span class="sr-only"></span></a>
+                        </li>
+                    </ul>
             </div>
-            {% endfor %}
+            <div class="row row-flex">
+                {% for product in products %}
+                <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+                    <a href="{% url 'product_details' product.id %}">
+                        <div class="panel-body">
+                            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                            <p>{{ product.name }}</p>
+                            <p>Artwork by {{ product.artist }}</p>
+                            <p>£{{ product.price }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
         </div>
         <div class="pagination-wrapper">
             {% if products.has_other_pages %}

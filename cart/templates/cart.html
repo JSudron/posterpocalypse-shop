@@ -4,15 +4,12 @@
 {% block page_title %}Shopping Cart{% endblock %}
 {% block page_heading %}Shopping Cart{% endblock %}
 {% block content %}
-    <div class="container">
+    <div class="container-fluid container-cart effect-1">
     {% if not cart_items %}
-    <div class="row justify-content-center">
-        <heading class="col-11 col-md-8 col-lg-6 text-center">
-            <h1 class="cart-heading">Your cart is empty!</h1>
-            <a href="{% url 'all_products' %}" class="btn btn-success btn-cta my-5">Back to store</a>
-        </heading>
+        <h1 class="heading">Your cart is empty...</h1>
+        <a href="{% url 'all_products' %}" class="">Back to store</a>
     </div>
-    {% endif %}
+    {% else %}
 	<table id="cart" class="table table-hover table-condensed">
 		<thead>
 			<tr>
@@ -58,12 +55,13 @@
 		</tbody>
 		<tfoot>
             {% if cart_items %}
-			<td><a href="{% url 'index' %}" class="btn btn-warning">Continue Shopping</a></td>
+			<td class="text-center"><a href="{% url 'index' %}">Continue Shopping</a></td>
 			<td colspan="2" class="hidden-xs"></td>
 			<td class="hidden-xs text-center">Total:<strong>£{{ total | floatformat:2}}</strong></td>
-			<td><a href="{% url 'shipping' %}" class="btn btn-success btn-block">Checkout</a></td>
+			<td class="text-center"><a href="{% url 'shipping' %}">Checkout</a></td>
             {% endif %}
 		</tfoot>
 	</table>
+    {% endif %}
 </div>
 {% endblock %}

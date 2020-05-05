@@ -11,12 +11,6 @@ html,body {
     font-family: 'Manrope';
 }
 
-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .heading, p {
     text-align: center;
 }
@@ -226,11 +220,14 @@ caption p {
     background-repeat: no-repeat;
 }
 
-.container {
-    height: 100vh;
+.container-cart {
+    height: 80vh;
     width: 60vw;
     padding-top: 30px;
     padding-bottom: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .artist-cart {

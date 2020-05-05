@@ -5,8 +5,7 @@
 /*-----------------------SPECIAL MARGINS/HEADINGS/TEXT */
 /*-----------------------Anchor effect taken from codepen.io & edited to own style */
 
-html,body { 
-    height: 100%;
+html, body { 
     background-color: white;
     font-family: 'Manrope';
 }
@@ -250,7 +249,6 @@ caption p {
     text-align: left;
 }
 
-
 /*-----------------------SHIPPING */
 
 .shipping-form-wrapper {
@@ -262,9 +260,10 @@ caption p {
 /*-----------------------FOOTER */
 
 footer {
-    position: absolute;
+    position: static;
     bottom: 0;
-    width: 100%
+    width: 100%;
+    z-index: 100;
 }
 
 .site-footer {
@@ -442,8 +441,8 @@ footer {
 
 @media (min-height: 767px) {
     .container-cart, .checkout-container {
-        height: 60vh;
-        padding-top: 40px;
+        position: relative;
+        min-height: 100vh;
     }
 }
 

@@ -51,7 +51,9 @@ def checkout(request):
                 clear_cart(request.user)
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
-                request.session['order_history'] = order.id
+                request.session["order_history"] = order.id
+                request.session["product_name"] = product.name
+                request.session["quantity"] = quantity
                 request.session["total"] = 0
                 return redirect("order_confirmation")
             else:
@@ -129,7 +131,7 @@ def order_history(request):
 
 def order_confirmation(request):
     order_history = request.session.get('order_history')
-    product_id = request.session.get("product_id")
+    product = request.session.get("product_name")
     quantity = request.session.get("quantity")
     form = request.session.get('CustomerForm')
     return render(
@@ -137,7 +139,7 @@ def order_confirmation(request):
         "order_confirmation.html", 
         {
             "order_history": order_history,
-            "product_id": product_id,
+            "product": product,
             "quantity": quantity,
             "form": form,
         }

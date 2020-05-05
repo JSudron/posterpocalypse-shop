@@ -11,7 +11,7 @@ html,body {
     font-family: 'Manrope';
 }
 
-.heading, p {
+.heading {
     text-align: center;
 }
 
@@ -23,6 +23,7 @@ dl, ol, ul {
 
 a {
     color: inherit;
+    font-weight: 500;
 }
 
 a:hover,
@@ -112,6 +113,8 @@ a:focus {
 
 .btn {
 	font-size:14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -129,6 +132,10 @@ a:focus {
 	margin-bottom: -30px;
 	font-size: 13px;
 	margin-top: 10px;
+}
+
+.quantity-input {
+    text-align: center;
 }
 
 /*-----------------------HOME */
@@ -157,6 +164,8 @@ a:focus {
     width: 100%;
     height: 450px;
     margin: 0 auto;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
 caption p {
@@ -177,16 +186,24 @@ caption p {
 .panel-body {
     height: 100%;
     padding: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.panel-body:hover {
+  transform: scale(1.1);
 }
 
 .product-image {
     object-fit: contain;
-    height: 75vh;
-    width: 75vw;
+    height: 65vh;
+    width: 65vw;
+    padding-bottom: 20px;
 }
 
 .item-details {
     padding-top: 0px;
+    line-height: 30px;
 }
 
  ul#categories-menu {
@@ -221,7 +238,6 @@ caption p {
 }
 
 .container-cart {
-    height: 80vh;
     width: 60vw;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -234,15 +250,19 @@ caption p {
     text-align: left;
 }
 
+
 /*-----------------------SHIPPING */
 
 .shipping-form-wrapper {
     align-items: center;
 }
 
+
+
 /*-----------------------FOOTER */
 
 footer {
+    position: absolute;
     bottom: 0;
     width: 100%
 }
@@ -418,15 +438,24 @@ footer {
 	table#cart tfoot td .btn{display:block;}	
 }
 
+/*-----------------------MEDIA QUERIES - CART */
+
+@media (min-height: 767px) {
+    .container-cart, .checkout-container {
+        height: 60vh;
+        padding-top: 40px;
+    }
+}
+
 /*-----------------------MEDIA QUERIES - FOOTER */
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
     .site-footer [class^=col-] {
         margin-bottom:30px;
     }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
     .site-footer {
         padding-bottom: 0;
     }

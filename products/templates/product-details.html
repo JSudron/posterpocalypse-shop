@@ -5,15 +5,15 @@
 {% block page_heading %}Product Details{% endblock %}
 {% block content %}
     <div class="container-fluid text-center">
-	    <div class="row">
-		<div class="column col-12 col-xl-6">
+	    <div class="row row-flex">
+		<div class="col-12 col-xl-6">
 			<img class="product-image" src="{{ MEDIA_URL }}{{ product.image }}" alt="product_image">
             </div>
-			<div class="column col-12 col-xl-6 item-details">
-                <h2 class="section-title">{{product.name}}</h2>
+			<div class="column col-12 col-xl-6 item-details effect-1 text-left">
+                <h2>{{product.name}}</h2>
+                <h4>£ {{ product.price }}</h4>
 				<p>{{ product.description }}</p>
 				<p>Artwork by {{ product.artist }}</p>
-				<p>£ {{ product.price }}</p>
 				<form method="post" action="{% url 'add_to_cart' product.id %}" data-add-basket-form>
 					{% csrf_token %}
 					<div class="col-12">
@@ -21,7 +21,11 @@
 					</div>
 				<button class="btn btn-success add-btn" type="submit">Add to cart</button>
 				</form>
+                <a href="{% url 'all_products' %}"> Back to Store</a>
+                <p>Expected to ship in 3-5 business days. This is an expected ship date, not a guaranteed ship-by date.<br> 
+                Things can change due to production or cargo delays, and if they do, we will always keep customers informed via an update email.</p>
 			</div>
 		</div>
 	</div>
+    {% block footer %}
 {% endblock %}

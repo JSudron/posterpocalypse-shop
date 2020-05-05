@@ -4,7 +4,7 @@
 {% block page_title %}Checkout{% endblock %}
 {% block page_heading %}Checkout{% endblock %}
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid checkout-container">
         <div class="form-group checkout-pay-form">
             <h3 class="checkout-header">Payment Details</h3>
             <div class="col-12 col-md-6 mt-4 pt-3 px-3 px-lg-5 mx-auto checkout-form">
@@ -15,20 +15,19 @@
                     <div class="form-group">
                         {{ payment_form | as_bootstrap }}
                     </div>
+                    <div class="total-price text-center">
+                        <p class="total-checkout">Total: </p>
+                        <p>£{{ total | floatformat:2 }} + Free Shipping</span>
+                        </p>
+                    </div>
                     {% csrf_token %}
-                    <div class="checkout-buttons col-md-12">
+                    <div class="checkout-buttons effect-1">
                         <input class=" btn btn-success btn-succes-cart" id="submit_payment_btn" name="commit"
                                 type="submit" value="Submit Payment" aria-label="Payment">
-                        <a href="{% url 'shipping' %}" class="btn btn-success btn-succes-cart" role="button"
-                            aria-label="Go Back"><span aria-hidden="true"></span>Go Back</a>
+                        <a href="{% url 'shipping' %}">Go Back</a>
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="total-price">
-            <p class="total-checkout">Total: </p>
-            <p>£{{ total | floatformat:2 }} + Free Shipping</span>
-            </p>
         </div>
     </div>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

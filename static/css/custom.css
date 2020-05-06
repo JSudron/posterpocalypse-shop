@@ -89,6 +89,20 @@ a:focus {
     text-align: center;
 }
 
+.navbar-brand {
+    background-image: url("https://a1c8001e-d0df-45b2-be6a-7554f5b062f7.ws-eu01.gitpod.io/mini-browser/workspace/posterpocalypse-shop/media/images/logo-small.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4rem;
+    width: 40vw;
+}
+
+.navbar-brand img {
+    border: none !important;
+    border-color: transparent;
+}
+
 .search-input {
     text-align: center;
     border: none;
@@ -141,10 +155,11 @@ a:focus {
 /*-----------------------HOME */
 
 .jumbotron {
-    background-color: white;age: url("");
+    background-image: url("https://a1c8001e-d0df-45b2-be6a-7554f5b062f7.ws-eu01.gitpod.io/mini-browser/workspace/posterpocalypse-shop/media/images/logo-large2.jpg");
+    background-color: white;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     height: 100vh;
 }
 

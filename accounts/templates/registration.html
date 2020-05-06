@@ -4,8 +4,8 @@
 {% block page_title %}Registration Page{% endblock %}
 {% block page_heading %}User Register{% endblock %}
 {% block content %}
-    <div class="container-fluid">
-        <div class="card login-form">
+    <div class="container-fluid checkout-container">
+        <div class="card login-form mx-auto">
             <div class="card-body">
                 <h3 class="card-title text-center">Create Account</h3>
                 <div class="card-text">
@@ -14,8 +14,8 @@
                     {{ registration_form | as_bootstrap }}
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                         </div>
-                        <div class="text-center mt-4">
-                        <p><small>Already registered? <a class="text-warning" href="{% url 'login' %}">Sign in</a></small></p>
+                        <div class="text-center mt-4 effect-1">
+                        <p><small>Already registered? <a class="text-danger" href="{% url 'login' %}">Sign in</a></small></p>
                         </div>
                     </form>
                 </div>

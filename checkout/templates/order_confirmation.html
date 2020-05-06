@@ -7,19 +7,23 @@
     <div class="container-fluid checkout-container text-center effect-1">
         <h2>Order Successful!</h2>
         <br></br>
-        <h3>Your order number is: <span>{{ order_history }}</span></h3>
+        <h4>Your order number is: <span>{{ order_history }}</span></h4>
         <br></br>
-        <h3>{{ product }} x {{ quantity }}</h3>
+        <h3>{{ quantity }} x '{{ product }}' Poster</h3>
         <br></br>
-        <h5 class="">Shipping address</h5>
+        <h4>Shipping address:</h>
         {% for field in form %}
         <div class="forms-group">
             <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">
-                <label><h4 class= "input-details">{{field.label_tag}}</h4></label>
-                {{field}}
+                <h4>{{ field.value }}</h4>
             </div>
         </div>
         {% endfor %}
+        <br></br>
+        <div class="col-sm-6 col-md-6 col-lg-6 mx-auto effect-1">
+                <h5>Thanks for your order, we'll have this packed & shipped within 48hrs.<br></br>
+                Any issues please get in touch at <a href="mailto:posterpocalypse@gmail.com">posterpocalypse@gmail.com</a></h5>
+        </div>
         <br></br>
         <a href="{% url 'index' %}">Return to the home page</a>
     </div>

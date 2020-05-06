@@ -48,7 +48,6 @@ def checkout(request):
 
             if customer.paid:
                 order = create_order_history(request.user, request.session)
-                clear_cart(request.user)
                 messages.error(request, "You have successfully paid")
                 request.session["cart"] = {}
                 request.session["order_history"] = order.id
@@ -56,6 +55,7 @@ def checkout(request):
                 request.session["quantity"] = quantity
                 request.session["total"] = 0
                 return redirect("order_confirmation")
+                clear_cart(request.user)
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -130,10 +130,11 @@ def order_history(request):
 
 
 def order_confirmation(request):
+    customer = Customer.objects.filter(user=request.user).first()
     order_history = request.session.get('order_history')
     product = request.session.get("product_name")
     quantity = request.session.get("quantity")
-    form = request.session.get('CustomerForm')
+    form = CustomerForm(instance=customer)
     return render(
         request, 
         "order_confirmation.html", 
@@ -142,5 +143,5 @@ def order_confirmation(request):
             "product": product,
             "quantity": quantity,
             "form": form,
-        }
+        },
     )

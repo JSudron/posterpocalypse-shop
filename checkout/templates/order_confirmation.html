@@ -4,14 +4,16 @@
 {% block page_title %}Order Confirmation{% endblock %}
 {% block page_heading %}Order Confirmation{% endblock %}
 {% block content %}
-    <div class="container-fluid text-center effect-1">
+    <div class="container-fluid checkout-container text-center effect-1">
         <h2>Order Successful!</h2>
         <br></br>
         <h4>Your order number is: <span>{{ order_history }}</span></h4>
         <br></br>
+        <h3>Below item included, for full of order please visit <a href="{% url 'order_history' %}">order history</a>
         <h3>{{ quantity }} x '{{ product }}' Poster</h3>
         <br></br>
-        <h4>Shipping address:</h>
+        <h4>Shipping all the way to:</h>
+        <br></br>
         {% for field in form %}
         <div class="forms-group">
             <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">

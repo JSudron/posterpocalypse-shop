@@ -58,7 +58,7 @@
 		</tbody>
 		<tfoot>
             {% if cart_items %}
-			<td class="text-center"><a href="{% url 'index' %}">Continue Shopping</a></td>
+			<td class="text-center"><a href="{% url 'all_products' %}">Continue Shopping</a></td>
 			<td colspan="2" class="hidden-xs"></td>
 			<td class="hidden-xs text-center">Total:<strong>£{{ total | floatformat:2}}</strong></td>
 			<td class="text-center"><a href="{% url 'shipping' %}">Checkout</a></td>

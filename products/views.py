@@ -28,8 +28,7 @@ def all_products(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-
-    
+  
     return render(
         request,
         "products.html",
@@ -39,7 +38,6 @@ def all_products(request):
         },
     )
     
-
 
 def product_details(request, id):
     product = Product.objects.get(id=id)

@@ -30,6 +30,7 @@ a:hover,
 a:focus {
 	outline: none;
     text-decoration: none;
+    color: #f000ff;
 }
 
 .effect-1 a::before,
@@ -67,7 +68,19 @@ a:focus {
 	transform: translateX(0px);
 }
 
+hr {
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #fff;
+    width: 50vw;
+}
 
+hr:after {
+	content: '';
+	display: block;
+	margin-top: 2px;
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #fff;
+}
 
 /*-----------------------NAVBAR */
 
@@ -76,6 +89,8 @@ a:focus {
     margin-top: 0px !important;
     border: none;
     text-align: center;
+    background-color: #f000ff;
+    color: white;
 }
 
 .navbar {
@@ -108,6 +123,13 @@ a:focus {
     border: none;
 }
 
+.search-input {
+    text-align: center;
+    border: none;
+}
+
+
+
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */
 
@@ -115,6 +137,10 @@ a:focus {
 	padding-top: 10px;
 	font-size: 14px;
 	margin-top: 30px;
+}
+
+.text-danger {
+    color: #f000ff !important;
 }
 
 .card-title { 
@@ -217,8 +243,8 @@ caption p {
 
 .product-image {
     object-fit: contain;
-    height: 70vh;
-    width: 70vw;
+    height: 65vh;
+    width: 65vw;
     padding-bottom: 20px;
 }
 
@@ -243,6 +269,12 @@ caption p {
     border: none;
     color: inherit;
     text-emphasis: none;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background-color: transparent;
+    color: #f000ff;
     text-decoration: none;
 }
 
@@ -318,7 +350,7 @@ footer {
 }
 
 .site-footer a:hover {
-    color: #3366cc;
+    color: #f000ff;
     text-decoration: none;
 }
 
@@ -336,7 +368,7 @@ footer {
 }
 
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover {
-    color: #3366cc;
+    color: #f000ff;
     text-decoration: none;
 }
 

@@ -52,7 +52,7 @@ def checkout(request):
                 request.session["cart"] = {}
                 request.session["order_history"] = order.id
                 request.session["product_name"] = product.name
-                request.session["quantity"] = quantity
+                request.session["quantity"] = product.quantity
                 request.session["total"] = 0
                 return redirect("order_confirmation")
                 clear_cart(request.user)

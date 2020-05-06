@@ -79,9 +79,9 @@ a:focus {
 }
 
 .navbar {
-    margin-bottom: 0px !important;
+    margin-bottom: 30px !important;
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 30px;
 }
 
 .navbar-header {
@@ -141,12 +141,19 @@ a:focus {
 /*-----------------------HOME */
 
 .jumbotron {
-  background-image: url("https://images.pexels.com/photos/479453/pexels-photo-479453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 65vh;
+    background-color: white;age: url("");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 
+/*-----------------------ACCOUNT */
+
+.img-history {
+    object-fit: contain;
+    height: 25vh;
+    width: 25vw;
 }
 
 /*-----------------------ABOUT */
@@ -164,8 +171,8 @@ a:focus {
     width: 100%;
     height: 450px;
     margin: 0 auto;
-    overflow: hidden;
     transition: 0.3s;
+    padding-bottom: 50px;
 }
 
 caption p {
@@ -186,7 +193,6 @@ caption p {
 .panel-body {
     height: 100%;
     padding: 20px;
-    overflow: hidden;
     transition: 0.3s;
 }
 
@@ -196,8 +202,8 @@ caption p {
 
 .product-image {
     object-fit: contain;
-    height: 65vh;
-    width: 65vw;
+    height: 70vh;
+    width: 70vw;
     padding-bottom: 20px;
 }
 
@@ -218,6 +224,7 @@ caption p {
 }
 
 .page-link {
+    padding-top: 30px;
     border: none;
     color: inherit;
     text-emphasis: none;
@@ -261,9 +268,8 @@ caption p {
 /*-----------------------FOOTER */
 
 footer {
-    position: static;
-    bottom: 0;
-    width: 100%;
+    bottom:0;
+    width:100%;
     z-index: 100;
 }
 
@@ -443,7 +449,7 @@ footer {
 @media (min-height: 767px) {
     .container-cart, .checkout-container {
         position: relative;
-        min-height: 100vh;
+        min-height: 90vh;
     }
 }
 

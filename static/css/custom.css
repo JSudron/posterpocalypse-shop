@@ -175,7 +175,7 @@ button:focus {
 /*-----------------------HOME */
 
 .jumbotron {
-    background-image: url("/media/images/logo-large2.jpg");
+    background-image: url("https://github.com/JSudron/posterpocalypse-shop/blob/ea4e8216b7e5a8f5e723f5166342f85b5c78b026/media/images/logo-large2.jpg?raw=true");
     background-color: white;
     background-position: center center;
     background-repeat: no-repeat;

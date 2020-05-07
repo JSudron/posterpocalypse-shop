@@ -24,7 +24,6 @@ class Product(models.Model):
 class ProductCategory(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
-    image = models.ImageField(upload_to="images")
 
     def __str__(self):
         return self.name

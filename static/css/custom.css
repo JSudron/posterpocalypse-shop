@@ -175,7 +175,7 @@ button:focus {
 /*-----------------------HOME */
 
 .jumbotron {
-    background-image: url("https://github.com/JSudron/posterpocalypse-shop/blob/ea4e8216b7e5a8f5e723f5166342f85b5c78b026/media/images/logo-large2.jpg?raw=true");
+    background-image: url("/media/images/logo-large2.jpg");
     background-color: white;
     background-position: center center;
     background-repeat: no-repeat;
@@ -331,8 +331,8 @@ footer {
     margin: 20px 0
 }
 
-.site-footer h6 {
-    color: #fff;
+.site-footer h5 {
+    color: #fff !important;
     text-transform: uppercase;
     margin-top: 5px;
     letter-spacing: 2px;

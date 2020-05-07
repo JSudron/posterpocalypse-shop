@@ -10,7 +10,7 @@
     <div class="container-fluid container-cart effect-1">
     {% if not cart_items %}
         <h1 class="heading">Your cart is empty...</h1>
-        <a href="{% url 'all_products' %}" class="">Back to store</a>
+        <a href="{% url 'all_products' %}">Back to store</a>
     </div>
     {% else %}
 	<table id="cart" class="table table-hover table-condensed">

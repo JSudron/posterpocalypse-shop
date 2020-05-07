@@ -118,6 +118,12 @@ img {
     border: none;
 }
 
+button:focus {
+	outline: none;
+    text-decoration: none;
+    color: #f000ff;
+}
+
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */
 
@@ -174,7 +180,7 @@ img {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 100vh;
+    height: 65vh;
     padding-bottom: 0;
     padding-top: 0;
 }

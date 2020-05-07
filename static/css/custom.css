@@ -76,7 +76,7 @@ a:focus {
 hr {
 	border-top: 1px solid #8c8b8b;
 	border-bottom: 1px solid #fff;
-    width: 50vw;
+    width: 60vw;
 }
 
 hr:after {
@@ -233,13 +233,11 @@ caption p {
 
 .product-image {
     object-fit: contain;
-    height: 65vh;
-    width: 65vw;
     padding-bottom: 20px;
 }
 
 .item-details {
-    padding-top: 0px;
+    padding-left: 30px;
     line-height: 30px;
 }
 
@@ -308,12 +306,12 @@ footer {
     bottom:0;
     width:100%;
     z-index: 100;
+    font-size: 1.1rem;
 }
 
 .site-footer {
     background-color: #26272b;
     padding: 45px 0 20px;
-    font-size: 15px;
     line-height: 24px;
     color: #737373;
 }
@@ -329,7 +327,6 @@ footer {
 
 .site-footer h6 {
     color: #fff;
-    font-size: 16px;
     text-transform: uppercase;
     margin-top: 5px;
     letter-spacing: 2px;

@@ -6,9 +6,9 @@ class Product(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField()
     artist = models.CharField(max_length=250, default='')
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=1.00)
     image = models.ImageField(upload_to="images", default='')
-    quantity = models.IntegerField(default='')
+    quantity = models.IntegerField(default=1.00)
     category = models.ForeignKey(
         "products.ProductCategory",
         blank=True,

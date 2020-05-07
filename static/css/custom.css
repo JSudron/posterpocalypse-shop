@@ -1,6 +1,6 @@
 /*-----------------------FONT */
 
-@import url('https://fonts.googleapis.com/css?family=Manrope:100,200,300,400,500,600,700|Baloo+Bhaina&display=swap:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Manrope:100,200,300,400,500,600,700|Bangers&display=swap:100,200,300,400,500,600,700');
 
 /*-----------------------SPECIAL MARGINS/HEADINGS/TEXT */
 /*-----------------------Anchor effect taken from codepen.io & edited to own style */
@@ -8,11 +8,16 @@
 html, body { 
     height: 100%;
     background-color: white;
-    font-family: 'Manrope';
+    font-family: 'Bangers';
+    font-size: 1.2rem;
 }
 
 .heading {
     text-align: center;
+}
+
+.container-fluid {
+    padding-bottom: 5rem;
 }
 
 dl, ol, ul {
@@ -112,13 +117,6 @@ img {
     text-align: center;
     border: none;
 }
-
-.search-input {
-    text-align: center;
-    border: none;
-}
-
-
 
 /*-----------------------FORMS */
 /*-----------------------Taken from codepen.io & edited to own style */

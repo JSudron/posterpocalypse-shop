@@ -206,7 +206,7 @@ button:focus {
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 450px;
+    height: 650px;
     margin: 0 auto;
     transition: 0.3s;
     padding-bottom: 50px;
@@ -505,12 +505,11 @@ footer {
     .site-footer {
         padding-bottom: 0;
     }
+
     .site-footer .copyright-text,.site-footer .social-icons {
         text-align: center;
     }
-}
 
-@media (max-width:767px) {
     .social-icons li.title {
     display: block;
     margin-right: 0;

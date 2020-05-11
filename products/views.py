@@ -12,23 +12,24 @@ def all_products(request):
     products = Product.objects.all()
     name = request.GET.get("q")
     category_id = request.GET.get("category_id")
-
     if category_id:
         products = products.filter(category_id=category_id)
 
     if name:
         products = products.filter(name__icontains=name)
     
-    page = request.GET.get("page", 1)
+    page = request.GET.get("page")
     products = products.order_by("name")
-    paginator = Paginator(products, 6)
+
+    # paginator responsible for displaiyng max 6 products per page
+
+    paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-  
     return render(
         request,
         "products.html",
@@ -37,7 +38,7 @@ def all_products(request):
             "categories": ProductCategory.objects.all(),
         },
     )
-    
+
 
 def product_details(request, id):
     product = Product.objects.get(id=id)

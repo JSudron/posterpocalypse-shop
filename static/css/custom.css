@@ -238,6 +238,7 @@ caption p {
 }
 
 .product-image {
+    max-height: 80vh;
     object-fit: contain;
     padding-bottom: 20px;
 }

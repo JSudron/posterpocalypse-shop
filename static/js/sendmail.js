@@ -1,3 +1,5 @@
+// Send mail using jsdeliver on the contacts form
+
 function sendMail(contactForm) {
     emailjs.send("outlook", "joe", {
         "from_name": contactForm.name.value,

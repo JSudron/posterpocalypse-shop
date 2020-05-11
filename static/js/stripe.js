@@ -1,3 +1,5 @@
+// All relevant code to add Stripe payment functionality
+
 $(function() {
     $("#payment-form").submit(function() {
         var form = this;

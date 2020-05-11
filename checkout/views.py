@@ -17,7 +17,6 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
-
     """
     Renders checkout & provides Stripe with the 
     keys to process payment.
@@ -76,7 +75,6 @@ def checkout(request):
 
 
 def shipping(request):
-
     """
     Renders checkout shipping page with navbar and footer
     ifnot logged in getting user is prompted to login.
@@ -108,7 +106,6 @@ def shipping(request):
 
 
 def order_history(request):
-
     """
     Displays order history to the user listed
     by date of purchase.

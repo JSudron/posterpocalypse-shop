@@ -5,16 +5,16 @@ from cart.models import Cart, CartItem
 
 
 def view_cart(request):
-
-    """A View that renders the cart contents page"""
+    """
+    Displays the cart contents page
+    """
 
     return render(request, "cart.html")
 
 
 def add_to_cart(request, id):
     """
-    Add quantity of specified
-    product to the cart stored in session.
+    Add specified product to the cart stored in session.
     Update total price of all products in cart.
     Creates or updates user cart, which is later loaded
     after login.
@@ -57,7 +57,6 @@ def add_to_cart(request, id):
 
 
 def adjust_cart(request, id):
-
     """
     Adjust the quantity of the product or delete selected item from cart.
     """
@@ -107,7 +106,6 @@ def adjust_cart(request, id):
 
 
 def cart_item_delete(request, item_id):
-
     """
     User can remove items from the shopping
     cart. 

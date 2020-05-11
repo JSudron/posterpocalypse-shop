@@ -24,7 +24,6 @@ class Order(TimestampedModel):
 
 
 class OrderItem(TimestampedModel):
-
     """
     this model holds the user order history item
     """

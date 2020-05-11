@@ -10,8 +10,9 @@ from checkout.models import Order
 
 def register(request):
     """
-    Render registration page
+    Display registration page
     """
+
     if request.user.is_authenticated:
         messages.info(request, "You're already logged in",
                          button='Ok', timer=3000)
@@ -42,13 +43,13 @@ def register(request):
     return render(request, 'registration.html', {
         "registration_form": registration_form})
     """
-    registration_form passed through as a context dictionary.
+    The registration_form passed through as a context dictionary.
     """
 
 
 def login(request):
     """
-    Render login page
+    Display login page
     """
     if request.user.is_authenticated:
         messages.info(request, "You're already logged in!",
@@ -83,6 +84,7 @@ def logout(request):
     """
     Logout user
     """
+
     auth.logout(request)
     messages.success(request, "You have successfully been logged out!")
 
@@ -96,6 +98,7 @@ def profile(request):
     avoid an error message if using get () instead. The latter method is
     limited to getting one result only.
     """
+
     user = User.objects.filter(email=request.user.email)
 
     context = {
@@ -106,7 +109,6 @@ def profile(request):
 
 
 def user_profile(request):
-
     """
     Renders profile page for user with a form to update
     their information. When posted creates a new customer.

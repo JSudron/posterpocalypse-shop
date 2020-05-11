@@ -5,8 +5,7 @@ from .models import Product, ProductCategory
 
 def all_products(request):
     """
-    Renders the product list with pagination
-    6 products per page
+    Allows user to view all products but also search by name & filter by category
     """
 
     products = Product.objects.all()
@@ -21,7 +20,10 @@ def all_products(request):
     page = request.GET.get("page")
     products = products.order_by("name")
 
-    # paginator responsible for displaiyng max 6 products per page
+    """
+    Renders the product list with pagination
+    9 products per page
+    """
 
     paginator = Paginator(products, 9)
     try:
@@ -41,5 +43,9 @@ def all_products(request):
 
 
 def product_details(request, id):
+    """
+    Displays the details of the chosen product
+    """
+
     product = Product.objects.get(id=id)
     return render(request, "product-details.html", {"product": product})

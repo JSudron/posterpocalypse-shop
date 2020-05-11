@@ -512,8 +512,8 @@ footer {
     }
 
     .social-icons li.title {
-    display: block;
-    margin-right: 0;
-    font-weight: 600;
+        display: block;
+        margin-right: 0;
+        font-weight: 600;
     }
 }

@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://posterpocalypse.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'posterpocalypse.herokuapp.com/']
 
 
 # Application definition

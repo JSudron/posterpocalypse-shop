@@ -26,6 +26,17 @@ dl, ol, ul {
     text-align: center;
 }
 
+.btn {
+    background-color: #f000ff;
+    border: none;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #78FE45;
+    border: none;
+}
+
 a {
     color: inherit;
     font-weight: 500;
@@ -198,12 +209,6 @@ button:focus {
     width: 25vw;
 }
 
-/*-----------------------ABOUT */
-
-.about-container {
-    padding: 50px 25px;
-}
-
 /*-----------------------PRODUCTS */
 
 .product {
@@ -287,7 +292,6 @@ caption p {
 
 .container-cart {
     width: 60vw;
-    padding-top: 30px;
     padding-bottom: 30px;
 	display: flex;
 	align-items: center;
@@ -298,13 +302,15 @@ caption p {
     text-align: left;
 }
 
+.checkout-heading {
+    padding-left: 20px;
+}
+
 /*-----------------------SHIPPING */
 
 .shipping-form-wrapper {
     align-items: center;
 }
-
-
 
 /*-----------------------FOOTER */
 
@@ -487,9 +493,9 @@ footer {
 /*-----------------------MEDIA QUERIES - CART */
 
 @media (min-height: 767px) {
-    .container-cart, .checkout-container {
+    .container-cart, .checkout-container, empty-container {
         position: relative;
-        min-height: 90vh;
+        min-height: 80vh;
     }
 }
 

@@ -19,7 +19,7 @@ from accounts import urls as urls_accounts
 from home import urls as urls_home
 from products import urls as urls_products
 from products.views import all_products
-from home.views import index, about
+from home.views import index, about, contact
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
 from django.views import static
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r"^$", index, name="index"),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^about/', about, name="about"),
+    url(r'^contact/', contact, name="contact"),
     url(r'^products/', include(urls_products)),
     url(r"^cart/", include(urls_cart)),
     url(r"^checkout/", include(urls_checkout)),

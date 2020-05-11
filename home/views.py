@@ -15,3 +15,11 @@ def about(request):
     """
     
     return render(request, "about.html")
+
+
+def contact(request):
+    """
+    Displays the about page
+    """
+    
+    return render(request, "contact.html")

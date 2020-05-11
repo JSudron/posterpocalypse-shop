@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block page_title %}Contact Page{% endblock %}
+{% block page_heading %}Contact Page{% endblock %}
+{% block content %}
+    <div class="container-fluid checkout-container text-center">
+        <div class="col-lg-10 mx-auto">
+            <h1>CONTACT US</h1>
+            <hr>
+            <br></br>
+            <h4 class="lead">If you have any issues or just simply want to get in touch fill in the form below</h4>
+			<br>
+			<div class="center-form col-lg-6 mx-auto effect-1">
+				<form onsubmit="return sendMail(this);">
+					<input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required/><br>
+					<input type="email" name="emailaddress" id="emailaddress" class="form-control" placeholder="E-mail" required/><br>
+					<textarea rows="6" name="query" id="query" class="form-control" placeholder="Query" required></textarea><br>
+					<div class="form-row text-center">
+						<div class="col">
+							<button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+        </div>
+    </div>
+{% endblock %}

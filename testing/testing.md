@@ -14,13 +14,26 @@
 
 ### Validator W3
 
-- The only errors shown were warnings about using too many hyphens in the comments.
-- Amended this by having only too hyphens before and after a comment.
+1. 
+- Warning: The type attribute is unnecessary for JavaScript resources.
+- `<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">`
+- Ignored in the case as provides easier readability
+
+2. 
+- Error: An img element must have an alt attribute, except under certain conditions.
+- `<img class="navbar-brand" src="https://github.com/JSudron/posterpocalypse-shop/blob/36d120412fa1dbb3bdb9793b93bf332e4bb73360/media/images/logo-small.jpg?raw=true">`
+- Added alt element to the image.
+
+3. 
+- Element form not allowed as child of element ul in this context
+- `<form class=" mb-3 mx-auto">`
+- Wrapped the form in a li item.
 
 ### Jigsaw W3
 
 - Used to validated the CSS code. Numerous errors were found but these were within the scripts loaded at the beginning of the page.
 - Within my custom CSS `-webkit` properties were identified as invalid but this was ignored.
+- Some issues with background-colour & colour of buttons being the same but these were ignored as code is working as intended visually.
 
 ### JSHint 
 
@@ -34,21 +47,21 @@
 
 ### Pep8 Online Validator
 
-- Used to validate the Python syntac. No errors were found.
+- Used to validate the Python syntax. No errors were found.
+
+### Django Validation
+
+- Manual validators were created for the vast majority of django apps.
+- However, due to time contsraints 100% validation ws not obtained.
 
 ## Manual Tests
 
 - An initial 'test.py' file was created to make sure that python was connecting up correctly.
 - The live web address was tested on a variety of web browsers: Chrome/Safari/Opera/Explorer.
 - Each link on the site was tested to ensure it linked to the correct place.
-- The story 'The Impossible' was added using the Add Stories page.
-- Each part of the story was then edited to ensure changes occurred correctly.
-- A 'Test' story was added which was then deleted to test the delete function.
-- The Submit Story form was deleted to ensure that each field was required to submit. 
+- Products were edited in the admin section to ensure changes were made on the site.
+- Test payments were made for the products.
 
 ## Peer-Code Review
 
 - Once the website was complete it was submitted to my peers for review.
-- It was suggested to change the width on navbar & hero-image to 100% instead of 100vw as this was creating oveflow-x issues.
-- The script link was changed to src instead of href as is the standard practice.
-- Height of hero-image was changed to 120vh for smaller devices to ensure no overlapping.

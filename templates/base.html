@@ -41,7 +41,7 @@
 	</div>
 	{% endif %}
 	<div class="navbar-header">
-		<a class="navbar-center" href="{% url 'index' %}"><img class="navbar-brand" src="https://github.com/JSudron/posterpocalypse-shop/blob/36d120412fa1dbb3bdb9793b93bf332e4bb73360/media/images/logo-small.jpg?raw=true"></a>
+		<a class="navbar-center" href="{% url 'index' %}"><img class="navbar-brand" src="https://github.com/JSudron/posterpocalypse-shop/blob/36d120412fa1dbb3bdb9793b93bf332e4bb73360/media/images/logo-small.jpg?raw=true" alt="logo"></a>
 	</div>
 	<nav class="navbar navbar-expand-lg slanted-header">
 		<!-- Navbar brand -->
@@ -84,9 +84,11 @@
 					<a class="nav-link" href="{% url 'login' %}">Sign In</a>
 				</li>
 				{% endif %}
+                <li class="nav-item">
 				<form class=" mb-3 mx-auto">
 					<input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="&#xF002; Search" type="search" aria-label="Search" style="font-family:Bangers, FontAwesome" required/>
                 </form>
+                </li>
 			</ul>
 		</div>
 		<!-- Collapsible content -->

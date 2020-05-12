@@ -13,6 +13,9 @@
                     href="{% url 'all_products' %}?category_id={{category.id}}">{{ category.name | title }}<span class="sr-only"></span></a>
                 {% endfor %}
                 <a class="category-link" href="{% url 'all_products' %}">View All<span class="sr-only"></span></a>
+                <form class=" mb-3 mx-auto">
+					<input class="form-control search-input" id="search_input" maxlength="20" name="q" placeholder="&#xF002; Search" type="search" aria-label="Search" style="font-family:Bangers, FontAwesome" required/>
+                </form>
             </div>
         </div>
         <br></br>

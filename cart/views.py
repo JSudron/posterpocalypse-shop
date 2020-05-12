@@ -126,6 +126,4 @@ def cart_item_delete(request, item_id):
             cart.pop(item_id)
             request.session["cart"] = cart
 
-    return redirect(reverse("view_cart"))
-
-    
+    return redirect(reverse("view_cart")) 

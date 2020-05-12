@@ -50,9 +50,9 @@
 				</td>
                 <td data-th="Subtotal" class="text-center"> £{{ item.product.price }}</td>
                 <td class="actions" data-th="">
-                    <form action="{% url 'cart_item_delete' item.id %}" method="post mx-auto">
+                    <form action="{% url 'cart_item_delete' item.id %}" method="post">
                     {% csrf_token %}
-					<button class="btn btn-danger btn-sm" action="{% url 'cart_item_delete' item.id %}" method="post" type="submit"><i class="fa fa-trash-o"></i></button>
+					<button class="btn btn-danger btn-sm" method="post" type="submit"><i class="fa fa-trash-o"></i></button>
                     </form>
                 </td>
 			</tr>
@@ -63,7 +63,7 @@
 			<td class="text-center"><a href="{% url 'all_products' %}">Continue Shopping</a></td>
 			<td colspan="2" class="hidden-xs"></td>
 			<td class="hidden-xs text-center">Total: <strong>£{{ total | floatformat:2}}</strong></td>
-			<td class="text-center"><a href="{% url 'shipping' %}">Checkout</a></td>
+			<td class="text-center"><a href="{% url 'shipping' %}" class="btn btn-lg" role="button" ><span aria-hidden="true"></span>Checkout</a>
             {% endif %}
 		</tfoot>
 	</table>

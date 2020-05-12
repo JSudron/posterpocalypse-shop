@@ -136,6 +136,7 @@ img {
 .search-input {
     text-align: center;
     border: none;
+    width: auto;
 }
 
 button:focus {
@@ -173,7 +174,7 @@ button:focus {
 
 
 .login-form { 
-	width: 330px;
+	max-width: 320px;
 	margin: 20px;
 }
 

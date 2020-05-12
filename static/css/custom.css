@@ -29,12 +29,16 @@ dl, ol, ul {
 .btn {
     background-color: #f000ff;
     border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .btn:hover,
 .btn:focus {
     background-color: #78FE45;
     border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 a {
@@ -282,6 +286,7 @@ caption p {
 
 .table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
+    text-align: center;
 }
 
 .img-responsive {
@@ -473,21 +478,33 @@ footer {
 	.actions .btn-info{
 		float:left;
 	}
+	
+	table#cart thead { 
+        display: none; 
+    }
+	table#cart tbody td { 
+        display: block; 
+        padding: .6rem; 
+        min-width:320px;
+    }
 
-	.actions .btn-danger{
-		float:right;
-	}
-	
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart tbody tr td:first-child { 
+        background: #333; 
+        color: #fff; 
+    }
+
 	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
+		content: attr(data-th); 
+        font-weight: bold; 
 	}
 	
-	table#cart tfoot td{display:block; }
-	table#cart tfoot td .btn{display:block;}	
+	table#cart tfoot td {
+        display:block; 
+    }
+
+	table#cart tfoot td .btn {
+        display:block;
+    }	
 }
 
 /*-----------------------MEDIA QUERIES - CART */

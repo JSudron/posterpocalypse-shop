@@ -18,7 +18,7 @@
 		<thead>
 			<tr>
 				<th style="width:50%">Product</th>
-				<th style="width:10%">Price</th>
+				<th style="width:22%">Price</th>
 				<th style="width:8%">Quantity</th>
                 <th style="width:8%"></th>
                 <th style="width:22%" class="text-center">Subtotal</th>
@@ -37,7 +37,7 @@
 							</div>
 						</div>
 				</td>
-				<td data-th="Price">£{{ item.product.price }}</td>
+				<td data-th="Price"> £{{ item.product.price }}</td>
                 <td data-th="Quantity">
                     <form method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
@@ -47,7 +47,7 @@
                     </td>
                     </form>
 				</td>
-                <td data-th="Subtotal" class="text-center">£{{ item.product.price }}</td>
+                <td data-th="Subtotal" class="text-center"> £{{ item.product.price }}</td>
                 <td class="actions" data-th="">
                     <form action="{% url 'cart_item_delete' item.id %}" method="post mx-auto">
                     {% csrf_token %}

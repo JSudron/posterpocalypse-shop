@@ -28,6 +28,7 @@ dl, ol, ul {
 
 .btn {
     background-color: #f000ff;
+    color: #fff;
     border: none;
     outline: none;
     box-shadow: none;
@@ -316,6 +317,10 @@ caption p {
 
 .shipping-form-wrapper {
     align-items: center;
+}
+
+.checkout-btn {
+    font-size: 1.2rem;
 }
 
 /*-----------------------FOOTER */

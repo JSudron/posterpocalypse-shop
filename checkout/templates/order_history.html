@@ -9,6 +9,7 @@
     </div>
     <div class="container-fluid container-cart effect-1">
         {% for order in orders %}
+        <tr>
         <table id="cart" class="table table-hover table-condensed">
             <thead>
                 <tr>
@@ -42,6 +43,7 @@
                 <td class="text-center">Total Amount: £{{order.order.total_cost}}</td>
             </tfoot>
         </table>
+        <tr>
         {% endfor %}
     </div>
 {% endblock %}

@@ -2,7 +2,7 @@
 
 # POSTERPOCALYPSE - Project Four: Full Stack Development
 
-![Screenshot](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/posterpocalypse-mockup.jpg)
+![Screenshot](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/posterpocalypse-mockup.jpg?raw=true)
 
 A live demo can be found [here](https://posterpocalypse.herokuapp.com/).
 
@@ -91,27 +91,27 @@ Adds some edge to the app whilst also having great readbility.
 - All wireframes were created using Balsamiq 3 software.
 - The wireframes display the original concepts for the site, however these changed due to striving to provide an enhanced user experience but occasionly due to coding/time constraints.
 
-- [Home](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Home.png).
+- [Home](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Home.png?raw=true).
 
-- [Register](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Register.png).
+- [Register](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Register.png?raw=true).
 
-- [Login](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Login.png).
+- [Login](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Login.png?raw=true).
 
-- [My Account](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/My%20Account.png).
+- [My Account](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/My%20Account.png?raw=true).
 
-- [Update Personal](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Update%20Personal.png).
+- [Update Personal](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Update%20Personal.png?raw=true).
 
-- [Update Address](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Update%20Address.png).
+- [Update Address](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Update%20Address.png?raw=true).
 
-- [Update Password](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Update%20Password.png).
+- [Update Password](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Update%20Password.png?raw=true).
 
-- [Products](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Products.png).
+- [Products](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Products.png?raw=true).
 
-- [Selected Product](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Selected%20Product.png).
+- [Selected Product](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Selected%20Product.png?raw=true).
 
-- [Cart](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Cart.png).
+- [Cart](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Cart.png?raw=true).
 
-- [Checkout](https://github.com/JSudron/posterpocalypse-shop/blob/6aa23909641e2c10a7c184ec0f8fe6a422388df0/media/images/mockups/Checkout.png).
+- [Checkout](https://github.com/JSudron/posterpocalypse-shop/blob/master/media/images/mockups/Checkout.png?raw=true).
 
 ## Features/Functionality
 

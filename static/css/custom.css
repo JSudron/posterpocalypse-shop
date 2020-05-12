@@ -512,7 +512,7 @@ footer {
 @media (min-height: 767px) {
     .container-cart, .checkout-container, empty-container {
         position: relative;
-        min-height: 80vh;
+        min-height: 70vh;
     }
 }
 

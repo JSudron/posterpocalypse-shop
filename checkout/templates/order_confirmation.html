@@ -1,44 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap_tags %}
-{% block page_title %}{{ user }}'s Orders{% endblock %}
-{% block page_heading %}{{ user }}'s Orders{% endblock %}
+{% block page_title %}Order Confirmation{% endblock %}
+{% block page_heading %}Order Confirmation{% endblock %}
 {% block content %}
-    <div class="container-fluid container-cart effect-1 align">
-        {% for order in orders %}
-        <table id="cart" class="table table-hover table-condensed">
-            <thead>
-                <tr>
-                    <th class="cart_product first_item" style="width:30%">PRODUCT</th>
-                    <th style="width:20%">ORDER DATE</th>
-                    <th style="width:15%">QUANTITY</th>
-                    <th style="width:15%" class="cart_unit item">PRICE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    {% for item in order.items%}
-                    {{ order_history }}
-                    <td data-th="Product:">
-                        <div class="row">
-                            <div class="col-md-2 d-none d-sm-block img-responsive"
-                                style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                            <div class="col-sm-10">
-                                <h4 class="nomargin">{{ item.product.name }}</h4>
-                                <p class="artist-cart">{{ item.product.artist }}</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td data-th="Order Date:"> {{ order.order.created_at }}</td>
-                    <td data-th="Quantity:"> {{ item.product.quantity }}</td>
-                    <td data-th="Price:"> £{{ item.product.price }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <td class="text-center">Total Amount: £{{order.order.total_cost}}</td>
-            </tfoot>
-        </table>
+    <div class="container-fluid checkout-container text-center effect-1">
+        <h2>Order Successful!</h2>
+        <br></br>
+        <h4>Your order number is: <span>{{ order_history }}</span></h4>
+        <br></br>
+        <h3>Below item included, for full order please visit <a href="{% url 'order_history' %}">order history</a>
+        <h3>{{ quantity }} x '{{ product }}' Poster</h3>
+        <br></br>
+        <h4>Shipping all the way to:</h>
+        <br></br>
+        {% for field in form %}
+        <div class="forms-group">
+            <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">
+                <h4>{{ field.value }}</h4>
+            </div>
+        </div>
         {% endfor %}
+        <br></br>
+        <div class="col-sm-6 col-md-6 col-lg-6 mx-auto effect-1">
+                <h5>Thanks for your order, we'll have this packed & shipped within 48hrs.<br></br>
+                Any issues please get in touch at <a href="mailto:posterpocalypse@gmail.com">posterpocalypse@gmail.com</a></h5>
+        <br></br>
+        <a href="{% url 'index' %}">Return to the home page</a>
+        </div>
     </div>
 {% endblock %}

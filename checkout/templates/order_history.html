@@ -4,53 +4,41 @@
 {% block page_title %}{{ user }}'s Orders{% endblock %}
 {% block page_heading %}{{ user }}'s Orders{% endblock %}
 {% block content %}
-    <div class="container-fluid text-center">
-        <div class="row">
-            <div class="col-md-10 col-sm-12 col-xs-12 mx-auto">
-                <h3 class="headers-history">Order History</h3>
-                {% for order in orders %}
-                <div class="table_block clearfix" id="order-detail-content">
-
-                    <table class="table table-bordered" id="cart_summary">
-                        <thead>
-                            <tr>
-                                <th class="cart_product first_item">Product Image</th>
-                                <th>ORDER DATE</th>
-                                <th>PRODUCT NAME</th>
-                                <th>QUANTITY</th>
-                                <th class="cart_unit item">PRICE</th>
-                            </tr>
-                        </thead>
-                        <tbody class="dropdown-product-list">
-                            {% for item in order.items%}
-                            {{ order_history }}
-                            <tr class="cart_item first_item address_0 odd dd-product-group">
-                                <td class="cart_product">
-                                    <img alt="product-name" class="img-history"src="{{ MEDIA_URL }}{{ item.product.image }}">
-                                    </td>
-                                <td data-title="ORDER DATE" class="table-history">
-                                    <span>{{ order.order.created_at }} </span>
-                                </td>
-                                <td data-title="PRODUCT NAME" class="table-history">
-                                    <span>{{ item.product.name }}</span>
-                                </td>
-                                <td data-title="QUANTITY" class="table-history">
-                                    <span>{{ item.quantity }}</span>
-                                </td>
-                                <td data-title="PRICE" class="table-history">
-                                    <span class="price">£{{ item.product.price }}</span>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-
-                </div>
-                <p class="row total-history">
-                    <span class="pull-left col-xs-6">Total Amount: £{{order.order.total_cost}}</span>
-                </p>
+    <div class="container-fluid container-cart effect-1 align">
+        {% for order in orders %}
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th class="cart_product first_item" style="width:30%">PRODUCT</th>
+                    <th style="width:20%">ORDER DATE</th>
+                    <th style="width:15%">QUANTITY</th>
+                    <th style="width:15%" class="cart_unit item">PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for item in order.items%}
+                    {{ order_history }}
+                    <td data-th="Product:">
+                        <div class="row">
+                            <div class="col-md-2 d-none d-sm-block img-responsive"
+                                style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">{{ item.product.name }}</h4>
+                                <p class="artist-cart">{{ item.product.artist }}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Order Date:"> {{ order.order.created_at }}</td>
+                    <td data-th="Quantity:"> {{ item.product.quantity }}</td>
+                    <td data-th="Price:"> £{{ item.product.price }}</td>
+                </tr>
                 {% endfor %}
-            </div>
-        </div>
+            </tbody>
+            <tfoot>
+                <td class="text-center">Total Amount: £{{order.order.total_cost}}</td>
+            </tfoot>
+        </table>
+        {% endfor %}
     </div>
 {% endblock %}

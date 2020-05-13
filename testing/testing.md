@@ -62,6 +62,8 @@
 - Products were edited in the admin section to ensure changes were made on the site.
 - Test payments were made for the products.
 
-## Peer-Code Review
+## Mentor Review
 
-- Once the website was complete it was submitted to my peers for review.
+- Once the website was complete it was submitted to my mentor for review.
+- He recommended making the checkout button larger & moving the search bar to the categories section on products.html.
+- These changes were implemented.

@@ -103,7 +103,7 @@ def adjust_cart(request, id):
                 cart=cart_object, product_id=id, quantity=cart[id]
             )
     return redirect(reverse("view_cart"))
-
+    
 
 def cart_item_delete(request, item_id):
     """

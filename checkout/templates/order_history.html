@@ -7,26 +7,26 @@
     <div>
         <h3 class="checkout-heading">{{ user }}'s Orders</h3>
     </div>
-    <div class="container-fluid container-cart effect-1">
-        {% for order in orders %}
-        <tr>
+    {% for order in orders %}
+    <div class="container-fluid effect-1">
+    <hr>
         <table id="cart" class="table table-hover table-condensed">
             <thead>
                 <tr>
-                    <th class="cart_product first_item" style="width:30%">PRODUCT</th>
+                    <th class="cart_product first_item" style="width:50%">PRODUCT</th>
                     <th style="width:20%">ORDER DATE</th>
-                    <th style="width:15%">QUANTITY</th>
-                    <th style="width:15%" class="cart_unit item">PRICE</th>
+                    <th style="width:10%">QUANTITY</th>
+                    <th style="width:10%" class="cart_unit item">PRICE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    {% for item in order.items%}
+                    {% for item in order.items %}
                     {{ order_history }}
                     <td data-th="Product:">
                         <div class="row">
-                            <div class="col-md-2 d-none d-sm-block img-responsive"
-                                style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                            <div class="col-md-2 d-none d-sm-block img-responsive" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')">
+                            </div>
                             <div class="col-sm-10 col-xs-10">
                                 <h4 class="nomargin">{{ item.product.name }}</h4>
                                 <p class="artist-cart">{{ item.product.artist }}</p>
@@ -41,9 +41,10 @@
             </tbody>
             <tfoot>
                 <td class="text-center">Total Amount: £{{order.order.total_cost}}</td>
-                <tr>
             </tfoot>
+        <br>
         </table>
+        <hr>
+        </div>
         {% endfor %}
-    </div>
 {% endblock %}

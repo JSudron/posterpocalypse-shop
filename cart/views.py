@@ -58,7 +58,8 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id):
     """
-    Adjust the quantity of the product or delete selected item from cart.
+    Adjust the quantity of the product & 
+    prompt the user if quantity is unavailable or less than 1.
     """
 
     quantity = request.POST.get("quantity")
